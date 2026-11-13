@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>autopath3d_ros</name>
+  <version>0.1.0</version>
+  <description>AutoPath-3D Phase 4: ROS 2 + Webots warehouse integration of the AutoPath-3D planners (A*, RRT*),
+    trajectory generation, validation and replanning supervisor, with a physics-based Crazyflie.</description>
+  <maintainer email="75452259+Atajan2000@users.noreply.github.com">Garayev Atajan</maintainer>
+  <!-- MIT: all AutoPath-3D code (repository LICENSE). Apache-2.0: worlds/autopath_warehouse.wbt only,
+       a modified Webots factory.wbt (see worlds/LICENSE.md and THIRD_PARTY_NOTICES.md). -->
+  <license>MIT</license>
+  <license>Apache-2.0</license>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>std_srvs</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>nav_msgs</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>trajectory_msgs</exec_depend>
+  <exec_depend>vision_msgs</exec_depend>
+  <exec_depend>rosgraph_msgs</exec_depend>
+  <exec_depend>tf2_ros</exec_depend>
+  <exec_depend>webots_ros2_driver</exec_depend>
+  <exec_depend>webots_ros2_crazyflie</exec_depend>
+  <exec_depend>python3-numpy</exec_depend>
+  <exec_depend>python3-scipy</exec_depend>
+  <exec_depend>python3-yaml</exec_depend>
+  <test_depend>python3-pytest</test_depend>
+  <test_depend>launch_testing</test_depend>
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

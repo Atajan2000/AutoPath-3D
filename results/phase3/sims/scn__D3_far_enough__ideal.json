@@ -1,0 +1,791 @@
+{
+ "meta": {
+  "label": "D3_far_enough",
+  "scene": "narrow_1200",
+  "dt": 0.01,
+  "goal": [
+   10.0,
+   4.0,
+   2.0
+  ],
+  "end_reason": "goal_reached",
+  "final_mode": "GOAL_REACHED",
+  "k_appear": 200,
+  "k_detect": 220,
+  "k_brake": 230,
+  "k_stop": 325,
+  "disturbance": "ideal",
+  "sim_wall_s": 0.09877719997894019,
+  "safety_monitor_wall_s": 0.024281598976813257,
+  "planning_latency_override_s": null,
+  "policy": {
+   "robot_radius": 0.25,
+   "nominal": 0.35,
+   "trajectory": 0.44999999999999996,
+   "tracking_allowance": 0.1
+  },
+  "controller": {
+   "kp": 9.0,
+   "kd": 6.0,
+   "a_track_max": 2.0,
+   "a_brake_max": 3.0,
+   "v_max": 3.0
+  },
+  "sim_config": {
+   "dt": 0.01,
+   "goal_position_tol": 0.1,
+   "goal_speed_tol": 0.1,
+   "settle_timeout_s": 5.0,
+   "hold_speed_tol": 0.05,
+   "post_abort_hold_s": 3.0,
+   "max_sim_time_s": 600.0
+  },
+  "update": {
+   "name": "D3_far_enough",
+   "t_appear": 2.0,
+   "obstacles": [
+    {
+     "name": "ahead_obstacle",
+     "lo": [
+      7.875351195992065,
+      3.4,
+      1.4
+     ],
+     "hi": [
+      8.275351195992064,
+      4.6,
+      2.6
+     ]
+    }
+   ]
+  },
+  "replan_wall_s": 0.04215769993606955,
+  "kind": "scenario",
+  "scenario": "D3_far_enough",
+  "description": "same obstacle 3.5 m ahead: safe stop and replanning around it",
+  "task": "through_window",
+  "start": [
+   2.0,
+   4.0,
+   2.0
+  ],
+  "supervisor_setup_s": 0.004908100003376603,
+  "expected": [
+   "replanned"
+  ],
+  "outcome": "replanned",
+  "supervisor_prediction": "safe_stop",
+  "matches_expected": true,
+  "attempts": [
+   "astar"
+  ],
+  "pipeline": {
+   "status": "success",
+   "reason": "",
+   "planner": "astar",
+   "planning_time_s": 0.009548000060021877,
+   "path_length_m": 8.06332495807108,
+   "path_waypoints": 40,
+   "shortcut_time_s": 0.008131299982778728,
+   "simplified_length_m": 8.0,
+   "simplified_waypoints": 2,
+   "generation_time_s": 0.0005024999845772982,
+   "duration_s": 5.154639175257731,
+   "validation_time_s": 0.009126899996772408,
+   "ref_max_speed_upper": 2.91,
+   "ref_max_accel_upper": 1.7383325737287851,
+   "ref_min_clearance": [
+    0.5990827510635113,
+    0.5999999999999996
+   ]
+  },
+  "reference_path": [
+   [
+    2.0,
+    4.0,
+    2.0
+   ],
+   [
+    2.3000000000000003,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    2.5,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    2.7,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    2.9000000000000004,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    3.1,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    3.3000000000000003,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    3.5,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    3.7,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    3.9000000000000004,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    4.1000000000000005,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    4.3,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    4.5,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    4.7,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    4.9,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    5.1000000000000005,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    5.300000000000001,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    5.5,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    5.7,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    5.9,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    6.1000000000000005,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    6.300000000000001,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    6.5,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    6.7,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    6.9,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    7.1000000000000005,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    7.300000000000001,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    7.5,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    7.7,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    7.9,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    8.1,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    8.3,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    8.5,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    8.700000000000001,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    8.9,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    9.1,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    9.3,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    9.5,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    9.700000000000001,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    10.0,
+    4.0,
+    2.0
+   ]
+  ],
+  "reference_simplified": [
+   [
+    2.0,
+    4.0,
+    2.0
+   ],
+   [
+    10.0,
+    4.0,
+    2.0
+   ]
+  ],
+  "run_name": "scn__D3_far_enough__ideal"
+ },
+ "events": [
+  {
+   "k": 0,
+   "t": 0.0,
+   "name": "MISSION_START",
+   "level": "INFO",
+   "message": "following the validated reference (5.15 s)",
+   "data": {
+    "start": [
+     2.0,
+     4.0,
+     2.0
+    ],
+    "goal": [
+     10.0,
+     4.0,
+     2.0
+    ]
+   }
+  },
+  {
+   "k": 200,
+   "t": 2.0,
+   "name": "OBSTACLE_APPEARED",
+   "level": "INFO",
+   "message": "1 new obstacle(s) exist in the world; not yet known to the drone",
+   "data": {
+    "obstacles": [
+     "ahead_obstacle"
+    ]
+   }
+  },
+  {
+   "k": 220,
+   "t": 2.2,
+   "name": "OBSTACLE_DETECTED",
+   "level": "WARN",
+   "message": "map update received 0.20 s after appearance; speed 2.79 m/s",
+   "data": {
+    "speed": 2.786602686683445
+   }
+  },
+  {
+   "k": 220,
+   "t": 2.2,
+   "name": "CONFLICT",
+   "level": "WARN",
+   "message": "remaining trajectory violates 0.45 m clearance; supervisor predicts: safe_stop (stopping distance 1.94 m)",
+   "data": {
+    "predicted": "safe_stop"
+   }
+  },
+  {
+   "k": 230,
+   "t": 2.3,
+   "name": "BRAKING",
+   "level": "WARN",
+   "message": "emergency stop at 3.0 m/s^2 from 2.84 m/s",
+   "data": {
+    "speed": 2.8430144403433997
+   }
+  },
+  {
+   "k": 325,
+   "t": 3.25,
+   "name": "STOPPED",
+   "level": "WARN",
+   "message": "at rest; 0.000 m from the supervisor's predicted stop point",
+   "data": {
+    "stop_point": [
+     6.546350161821464,
+     4.0,
+     2.0
+    ],
+    "predicted_stop_point": [
+     6.546322480308427,
+     4.0,
+     2.0
+    ]
+   }
+  },
+  {
+   "k": 325,
+   "t": 3.25,
+   "name": "HOLD_VERIFIED",
+   "level": "INFO",
+   "message": "hold point clearance 0.748 m, executed stop clearance >= 0.600 m (>= 0.35 m)",
+   "data": {
+    "hold_point": [
+     6.546350161821464,
+     4.0,
+     2.0
+    ],
+    "hold_clearance": 0.7478157974782608,
+    "flown_clearance": [
+     0.599900315871428,
+     0.5999999999999996
+    ],
+    "predicted": null
+   }
+  },
+  {
+   "k": 325,
+   "t": 3.25,
+   "name": "REPLANNING",
+   "level": "WARN",
+   "message": "rebuilding the voxel map and planning from the hold point (1 attempt(s) configured); measured compute 0.04 s wall-clock -> simulated hold 0.05 s",
+   "data": {
+    "measured_compute_s": 0.04190559999551624
+   }
+  },
+  {
+   "k": 330,
+   "t": 3.3,
+   "name": "REPLAN_SUCCEEDED",
+   "level": "INFO",
+   "message": "astar route validated (length 4.42 m, duration 6.28 s, clearance >= 0.605 m)",
+   "data": {}
+  },
+  {
+   "k": 330,
+   "t": 3.3,
+   "name": "RESUMING",
+   "level": "INFO",
+   "message": "following the replacement trajectory",
+   "data": {}
+  },
+  {
+   "k": 958,
+   "t": 9.58,
+   "name": "GOAL_REACHED",
+   "level": "INFO",
+   "message": "within 0.10 m / 0.10 m/s of the goal (error 0.000 m)",
+   "data": {
+    "error": 4.125986131473163e-06
+   }
+  }
+ ],
+ "trajectories": [
+  {
+   "id": 0,
+   "label": "original",
+   "knots": [
+    0.0,
+    5.154639175257731
+   ],
+   "coeffs": [
+    [
+     [
+      2.0,
+      4.0,
+      2.0
+     ],
+     [
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.5841107200000002,
+      0.0,
+      0.0
+     ],
+     [
+      -0.16997621952000008,
+      0.0,
+      0.0
+     ],
+     [
+      0.013190154634752007,
+      0.0,
+      0.0
+     ]
+    ]
+   ],
+   "hold_point": null
+  },
+  {
+   "id": 1,
+   "label": "replanned",
+   "knots": [
+    3.3000000000000003,
+    5.383941780791963,
+    7.425128994541506,
+    9.57900347039472
+   ],
+   "coeffs": [
+    [
+     [
+      6.546350161821464,
+      4.0,
+      2.0
+     ],
+     [
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.5788380222163078,
+      -0.0908135983347151,
+      -0.9989495816818699
+     ],
+     [
+      -0.35967046566294897,
+      0.06300560233733593,
+      0.6930616257106977
+     ],
+     [
+      0.06356892589769607,
+      -0.011866944461496534,
+      -0.13053638907646237
+     ]
+    ],
+    [
+     [
+      7.5,
+      3.9000000000000004,
+      0.9
+     ],
+     [
+      0.5155993098298821,
+      -0.021368336953463785,
+      -0.23505170648810247
+     ],
+     [
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.38508943778200244,
+      0.011267470498652484,
+      0.12394217548517775
+     ],
+     [
+      -0.28009947202046254,
+      -0.0033786170048093014,
+      -0.03716478705290246
+     ],
+     [
+      0.05460636873727745,
+      0.0001818319225868558,
+      0.0020001511484554176
+     ]
+    ],
+    [
+     [
+      8.9,
+      3.9000000000000004,
+      0.9
+     ],
+     [
+      0.5401759029057778,
+      0.020316180719272416,
+      0.22347798791199738
+     ],
+     [
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.4022310390385609,
+      0.073802455372471,
+      0.811827009097184
+     ],
+     [
+      -0.33418125497833,
+      -0.05343066644346975,
+      -0.5877373308781694
+     ],
+     [
+      0.0670811849614034,
+      0.010111502581914055,
+      0.11122652840105501
+     ]
+    ]
+   ],
+   "hold_point": null
+  }
+ ],
+ "supervisor": {
+  "update": "D3_far_enough",
+  "t_appear": 2.0,
+  "t_detect": 2.2,
+  "speed_at_appear": 2.62530198614016,
+  "speed_at_detect": 2.786602686683445,
+  "stopping_distance_baseline_m": 1.9362923489139598,
+  "distance_to_contact_m": 3.2502448193650704,
+  "distance_to_conflict_m": 3.0507749692085477,
+  "conflict_check_s": 0.0001721000298857689,
+  "conflict_check_within_decision_budget": true,
+  "conflict": true,
+  "t_brake": 2.3000000000000003,
+  "speed_at_brake": 2.843007506372457,
+  "braking_distance_m": 1.3471152802150224,
+  "t_stop": 3.2476691687908192,
+  "stop_point": [
+   6.546322480308427,
+   4.0,
+   2.0
+  ],
+  "travel_after_appear_m": 2.170971284316362,
+  "stop_min_clearance": [
+   0.5990202707361195,
+   0.5999999999999996
+  ],
+  "hold_clearance": 0.7477992754935417,
+  "hold_clearance_meets_trajectory_tier": true,
+  "safe_stop": true,
+  "assess_wall_s": 0.003547400003299117
+ },
+ "replan": {
+  "map_update_s": 0.00549840007442981,
+  "attempts": [
+   {
+    "attempt": 0,
+    "planner": "astar",
+    "status": "success",
+    "reason": "",
+    "compute_s": 0.03640719992108643,
+    "planning_time_s": 0.01926959992852062,
+    "shortcut_time_s": 0.0052250000881031156,
+    "generation_time_s": 0.0024865000741556287,
+    "validation_time_s": 0.008682899991981685,
+    "path_length_m": 4.644772719489333,
+    "simplified_length_m": 4.418108559155069,
+    "duration_s": 6.27900347039472,
+    "rejected_candidates": 0,
+    "validation": {
+     "valid": true,
+     "failures": [],
+     "duration": 6.27900347039472,
+     "min_clearance_lower": 0.6045896603138151,
+     "min_clearance_upper": 0.6055845437991924,
+     "max_speed_lower": 1.147072084055079,
+     "max_speed_upper": 1.147072625137094,
+     "max_accel_lower": 1.4952735680859406,
+     "max_accel_upper": 1.495274241873887,
+     "max_position_jump": 2.964524164554547e-15,
+     "max_velocity_jump": 6.793011454067236e-15,
+     "max_accel_jump": 1.8794157779094015e-15,
+     "max_deviation_upper": 0.14784888553857273
+    }
+   }
+  ],
+  "replan_compute_s": 0.04190559999551624,
+  "hold_duration_s": 0.04190559999551624,
+  "outcome": "replanned",
+  "goal_reached": true,
+  "t_resume": 3.2919055999955162,
+  "mission_end_t": 9.570909070390236,
+  "post_update_min_clearance": [
+   0.599900315871428,
+   0.5999999999999996
+  ],
+  "t_hold": 3.25,
+  "sim_planning_s": 0.05,
+  "measured_compute_s": 0.04190559999551624,
+  "t_result": 3.3000000000000003,
+  "t_resume_sim": 3.3000000000000003
+ },
+ "metrics": {
+  "goal_reached": true,
+  "safety_pass": true,
+  "mission_success": true,
+  "checks": {
+   "no_collision": true,
+   "clearance_ge_nominal": true,
+   "tracking_within_allowance": true,
+   "speed_within_limit": true,
+   "accel_within_nominal_limit": true,
+   "braking_within_capability": true
+  },
+  "collision": false,
+  "final_mode": "GOAL_REACHED",
+  "end_reason": "goal_reached",
+  "execution_duration_s": 9.58,
+  "time_in_mode_s": {
+   "FOLLOWING": 2.3000000000000003,
+   "BRAKING": 0.9500000000000001,
+   "REPLANNING": 0.05,
+   "FOLLOWING_REPLAN": 6.28
+  },
+  "tracking": {
+   "position_error": {
+    "max": 1.2472397746771066e-05,
+    "rms": 6.266264514671291e-06,
+    "mean": 5.36464370508008e-06,
+    "p95": 1.1133713462663626e-05
+   },
+   "velocity_error": {
+    "max": 6.223901562610052e-05,
+    "rms": 9.058592055362371e-06,
+    "mean": 6.457194074653925e-06,
+    "p95": 1.1880720274862782e-05
+   },
+   "per_reference": {
+    "original": {
+     "position_error": {
+      "max": 9.469344733670226e-06,
+      "rms": 5.9165984208804925e-06,
+      "mean": 5.1245339160160585e-06,
+      "p95": 9.404320099259954e-06
+     },
+     "velocity_error": {
+      "max": 1.1369735203548004e-05,
+      "rms": 6.933246274487911e-06,
+      "mean": 5.837367053033571e-06,
+      "p95": 1.1286616339944988e-05
+     },
+     "steps": 230
+    },
+    "replanned": {
+     "position_error": {
+      "max": 1.2472397746771066e-05,
+      "rms": 6.389541291284787e-06,
+      "mean": 5.452582003622635e-06,
+      "p95": 1.1266836569902883e-05
+     },
+     "velocity_error": {
+      "max": 6.223901562610052e-05,
+      "rms": 9.721419268109094e-06,
+      "mean": 6.684200786393863e-06,
+      "p95": 1.4568166424816487e-05
+     },
+     "steps": 628
+    }
+   },
+   "tracking_steps": 858
+  },
+  "max_speed": 2.8430144403433997,
+  "max_reference_speed": 2.8381197092969987,
+  "max_accel_cmd_tracking_hold": 1.7383100717499471,
+  "max_accel_cmd_braking": 3.0000000000000004,
+  "max_accel_net": 3.0000000000000004,
+  "saturated_fraction": 0.0,
+  "governor_steps": 0,
+  "hold_drift_max": 0.0,
+  "clearance": {
+   "before_update": [
+    1.6384068783076626,
+    1.6384638350922505
+   ],
+   "after_update": [
+    0.599900315871428,
+    0.5999999999999996
+   ],
+   "lower": 0.599900315871428,
+   "upper": 0.5999999999999996,
+   "t_min": 2.58,
+   "p_min": [
+    5.877645558993076,
+    4.0,
+    2.0
+   ]
+  },
+  "goal_error_final": 4.125986131473163e-06,
+  "goal_error_at_reference_end": 4.125986131473163e-06,
+  "speed_final": 4.275148794296132e-06,
+  "t_goal_reached": 9.58
+ }
+}

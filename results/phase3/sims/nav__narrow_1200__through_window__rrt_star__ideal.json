@@ -1,0 +1,281 @@
+{
+ "meta": {
+  "label": "narrow_1200/through_window/rrt_star",
+  "scene": "narrow_1200",
+  "dt": 0.01,
+  "goal": [
+   10.0,
+   4.0,
+   2.0
+  ],
+  "end_reason": "goal_reached",
+  "final_mode": "GOAL_REACHED",
+  "k_appear": -1,
+  "k_detect": -1,
+  "k_brake": -1,
+  "k_stop": -1,
+  "disturbance": "ideal",
+  "sim_wall_s": 0.027179699973203242,
+  "safety_monitor_wall_s": 0.013159599038772285,
+  "planning_latency_override_s": null,
+  "policy": {
+   "robot_radius": 0.25,
+   "nominal": 0.35,
+   "trajectory": 0.44999999999999996,
+   "tracking_allowance": 0.1
+  },
+  "controller": {
+   "kp": 9.0,
+   "kd": 6.0,
+   "a_track_max": 2.0,
+   "a_brake_max": 3.0,
+   "v_max": 3.0
+  },
+  "sim_config": {
+   "dt": 0.01,
+   "goal_position_tol": 0.1,
+   "goal_speed_tol": 0.1,
+   "settle_timeout_s": 5.0,
+   "hold_speed_tol": 0.05,
+   "post_abort_hold_s": 3.0,
+   "max_sim_time_s": 600.0
+  },
+  "update": null,
+  "replan_wall_s": 0.0,
+  "kind": "navigation",
+  "task": "through_window",
+  "planner": "rrt_star",
+  "start": [
+   2.0,
+   4.0,
+   2.0
+  ],
+  "map_setup_s": 0.005405999952927232,
+  "pipeline": {
+   "status": "success",
+   "reason": "",
+   "planner": "rrt_star",
+   "planning_time_s": 3.838288600090891,
+   "path_length_m": 8.013247111231989,
+   "path_waypoints": 7,
+   "shortcut_time_s": 0.0017738000024110079,
+   "simplified_length_m": 8.0,
+   "simplified_waypoints": 2,
+   "generation_time_s": 0.0005032999906688929,
+   "duration_s": 5.154639175257731,
+   "validation_time_s": 0.008664499968290329,
+   "ref_max_speed_upper": 2.91,
+   "ref_max_accel_upper": 1.7383325737287851,
+   "ref_min_clearance": [
+    0.5990827510635113,
+    0.5999999999999996
+   ]
+  },
+  "reference_path": [
+   [
+    2.0,
+    4.0,
+    2.0
+   ],
+   [
+    2.684076401362712,
+    3.9934327835621244,
+    1.992125603522619
+   ],
+   [
+    3.5609121104269907,
+    3.949376429501117,
+    2.011046839014265
+   ],
+   [
+    4.526105620785024,
+    3.97118035294063,
+    2.1054498232873633
+   ],
+   [
+    5.406162800284781,
+    4.068508941584611,
+    2.075134195121505
+   ],
+   [
+    7.905550644513841,
+    4.031235000786667,
+    2.0342556254620785
+   ],
+   [
+    10.0,
+    4.0,
+    2.0
+   ]
+  ],
+  "reference_simplified": [
+   [
+    2.0,
+    4.0,
+    2.0
+   ],
+   [
+    10.0,
+    4.0,
+    2.0
+   ]
+  ],
+  "run_name": "nav__narrow_1200__through_window__rrt_star__ideal"
+ },
+ "events": [
+  {
+   "k": 0,
+   "t": 0.0,
+   "name": "MISSION_START",
+   "level": "INFO",
+   "message": "following the validated reference (5.15 s)",
+   "data": {
+    "start": [
+     2.0,
+     4.0,
+     2.0
+    ],
+    "goal": [
+     10.0,
+     4.0,
+     2.0
+    ]
+   }
+  },
+  {
+   "k": 516,
+   "t": 5.16,
+   "name": "GOAL_REACHED",
+   "level": "INFO",
+   "message": "within 0.10 m / 0.10 m/s of the goal (error 0.000 m)",
+   "data": {
+    "error": 8.817114498071987e-06
+   }
+  }
+ ],
+ "trajectories": [
+  {
+   "id": 0,
+   "label": "original",
+   "knots": [
+    0.0,
+    5.154639175257731
+   ],
+   "coeffs": [
+    [
+     [
+      2.0,
+      4.0,
+      2.0
+     ],
+     [
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.5841107200000002,
+      0.0,
+      0.0
+     ],
+     [
+      -0.16997621952000008,
+      0.0,
+      0.0
+     ],
+     [
+      0.013190154634752007,
+      0.0,
+      0.0
+     ]
+    ]
+   ],
+   "hold_point": null
+  }
+ ],
+ "supervisor": null,
+ "replan": null,
+ "metrics": {
+  "goal_reached": true,
+  "safety_pass": true,
+  "mission_success": true,
+  "checks": {
+   "no_collision": true,
+   "clearance_ge_nominal": true,
+   "tracking_within_allowance": true,
+   "speed_within_limit": true,
+   "accel_within_nominal_limit": true,
+   "braking_within_capability": true
+  },
+  "collision": false,
+  "final_mode": "GOAL_REACHED",
+  "end_reason": "goal_reached",
+  "execution_duration_s": 5.16,
+  "time_in_mode_s": {
+   "FOLLOWING": 5.16
+  },
+  "tracking": {
+   "position_error": {
+    "max": 9.469344733670226e-06,
+    "rms": 6.303069772470116e-06,
+    "mean": 5.651745611404802e-06,
+    "p95": 9.1617247538478e-06
+   },
+   "velocity_error": {
+    "max": 1.2439331420477373e-05,
+    "rms": 8.292022769081755e-06,
+    "mean": 7.324900952540897e-06,
+    "p95": 1.232725178867966e-05
+   },
+   "per_reference": {
+    "original": {
+     "position_error": {
+      "max": 9.469344733670226e-06,
+      "rms": 6.303069772470116e-06,
+      "mean": 5.651745611404802e-06,
+      "p95": 9.1617247538478e-06
+     },
+     "velocity_error": {
+      "max": 1.2439331420477373e-05,
+      "rms": 8.292022769081755e-06,
+      "mean": 7.324900952540897e-06,
+      "p95": 1.232725178867966e-05
+     },
+     "steps": 516
+    }
+   },
+   "tracking_steps": 516
+  },
+  "max_speed": 2.9100033988490055,
+  "max_reference_speed": 2.9099937050914053,
+  "max_accel_cmd_tracking_hold": 1.7383332741117692,
+  "max_accel_cmd_braking": null,
+  "max_accel_net": 1.7383332741117692,
+  "saturated_fraction": 0.0,
+  "governor_steps": 0,
+  "hold_drift_max": null,
+  "clearance": {
+   "before_update": [
+    0.5999001029066883,
+    0.5999999999999996
+   ],
+   "lower": 0.5999001029066883,
+   "upper": 0.5999999999999996,
+   "t_min": 2.57,
+   "p_min": [
+    5.978692786261437,
+    4.0,
+    2.0
+   ]
+  },
+  "goal_error_final": 8.817114498071987e-06,
+  "goal_error_at_reference_end": 8.556611629018107e-06,
+  "speed_final": 2.6009251103993085e-05,
+  "t_goal_reached": 5.16
+ }
+}

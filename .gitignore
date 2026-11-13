@@ -1,0 +1,18 @@
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+build/
+dist/
+*.rrd
+
+# Local-only material that must not be published (original unsanitised logs, backups)
+local/
+# colcon workspace output, if a workspace is created inside the repository
+install/
+log/
+
+# Local video and raw run logs
+assets/demo/*.mp4
+*.log

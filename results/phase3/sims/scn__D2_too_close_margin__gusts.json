@@ -1,0 +1,570 @@
+{
+ "meta": {
+  "label": "D2_too_close_margin",
+  "scene": "narrow_1200",
+  "dt": 0.01,
+  "goal": [
+   10.0,
+   4.0,
+   2.0
+  ],
+  "end_reason": "collision",
+  "final_mode": "COLLIDED",
+  "k_appear": 200,
+  "k_detect": 220,
+  "k_brake": 230,
+  "k_stop": -1,
+  "disturbance": "gusts",
+  "sim_wall_s": 0.020703500020317733,
+  "safety_monitor_wall_s": 0.009255899698473513,
+  "planning_latency_override_s": null,
+  "policy": {
+   "robot_radius": 0.25,
+   "nominal": 0.35,
+   "trajectory": 0.44999999999999996,
+   "tracking_allowance": 0.1
+  },
+  "controller": {
+   "kp": 9.0,
+   "kd": 6.0,
+   "a_track_max": 2.0,
+   "a_brake_max": 3.0,
+   "v_max": 3.0
+  },
+  "sim_config": {
+   "dt": 0.01,
+   "goal_position_tol": 0.1,
+   "goal_speed_tol": 0.1,
+   "settle_timeout_s": 5.0,
+   "hold_speed_tol": 0.05,
+   "post_abort_hold_s": 3.0,
+   "max_sim_time_s": 600.0
+  },
+  "update": {
+   "name": "D2_too_close_margin",
+   "t_appear": 2.0,
+   "obstacles": [
+    {
+     "name": "ahead_obstacle",
+     "lo": [
+      6.875351195992065,
+      3.4,
+      1.4
+     ],
+     "hi": [
+      7.275351195992065,
+      4.6,
+      2.6
+     ]
+    }
+   ]
+  },
+  "replan_wall_s": 0.0,
+  "kind": "scenario",
+  "scenario": "D2_too_close_margin",
+  "description": "obstacle appears just beyond the stopping distance: stops without contact but inside the safety margin",
+  "task": "through_window",
+  "start": [
+   2.0,
+   4.0,
+   2.0
+  ],
+  "supervisor_setup_s": 0.006027099909260869,
+  "expected": [
+   "stop_margin_violation"
+  ],
+  "outcome": "unavoidable_collision",
+  "supervisor_prediction": "stop_margin_violation",
+  "matches_expected": false,
+  "attempts": [
+   "astar"
+  ],
+  "pipeline": {
+   "status": "success",
+   "reason": "",
+   "planner": "astar",
+   "planning_time_s": 0.008131499984301627,
+   "path_length_m": 8.06332495807108,
+   "path_waypoints": 40,
+   "shortcut_time_s": 0.00817679997999221,
+   "simplified_length_m": 8.0,
+   "simplified_waypoints": 2,
+   "generation_time_s": 0.0005130999488756061,
+   "duration_s": 5.154639175257731,
+   "validation_time_s": 0.008182499906979501,
+   "ref_max_speed_upper": 2.91,
+   "ref_max_accel_upper": 1.7383325737287851,
+   "ref_min_clearance": [
+    0.5990827510635113,
+    0.5999999999999996
+   ]
+  },
+  "reference_path": [
+   [
+    2.0,
+    4.0,
+    2.0
+   ],
+   [
+    2.3000000000000003,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    2.5,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    2.7,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    2.9000000000000004,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    3.1,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    3.3000000000000003,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    3.5,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    3.7,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    3.9000000000000004,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    4.1000000000000005,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    4.3,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    4.5,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    4.7,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    4.9,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    5.1000000000000005,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    5.300000000000001,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    5.5,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    5.7,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    5.9,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    6.1000000000000005,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    6.300000000000001,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    6.5,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    6.7,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    6.9,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    7.1000000000000005,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    7.300000000000001,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    7.5,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    7.7,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    7.9,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    8.1,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    8.3,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    8.5,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    8.700000000000001,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    8.9,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    9.1,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    9.3,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    9.5,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    9.700000000000001,
+    3.9000000000000004,
+    1.9000000000000001
+   ],
+   [
+    10.0,
+    4.0,
+    2.0
+   ]
+  ],
+  "reference_simplified": [
+   [
+    2.0,
+    4.0,
+    2.0
+   ],
+   [
+    10.0,
+    4.0,
+    2.0
+   ]
+  ],
+  "run_name": "scn__D2_too_close_margin__gusts"
+ },
+ "events": [
+  {
+   "k": 0,
+   "t": 0.0,
+   "name": "MISSION_START",
+   "level": "INFO",
+   "message": "following the validated reference (5.15 s)",
+   "data": {
+    "start": [
+     2.0,
+     4.0,
+     2.0
+    ],
+    "goal": [
+     10.0,
+     4.0,
+     2.0
+    ]
+   }
+  },
+  {
+   "k": 200,
+   "t": 2.0,
+   "name": "OBSTACLE_APPEARED",
+   "level": "INFO",
+   "message": "1 new obstacle(s) exist in the world; not yet known to the drone",
+   "data": {
+    "obstacles": [
+     "ahead_obstacle"
+    ]
+   }
+  },
+  {
+   "k": 220,
+   "t": 2.2,
+   "name": "OBSTACLE_DETECTED",
+   "level": "WARN",
+   "message": "map update received 0.20 s after appearance; speed 2.78 m/s",
+   "data": {
+    "speed": 2.781058300760493
+   }
+  },
+  {
+   "k": 220,
+   "t": 2.2,
+   "name": "CONFLICT",
+   "level": "WARN",
+   "message": "remaining trajectory violates 0.45 m clearance; supervisor predicts: stop_margin_violation (stopping distance 1.94 m)",
+   "data": {
+    "predicted": "stop_margin_violation"
+   }
+  },
+  {
+   "k": 230,
+   "t": 2.3,
+   "name": "BRAKING",
+   "level": "WARN",
+   "message": "emergency stop at 3.0 m/s^2 from 2.84 m/s",
+   "data": {
+    "speed": 2.839223663466818
+   }
+  },
+  {
+   "k": 302,
+   "t": 3.02,
+   "name": "SAFETY_VIOLATION",
+   "level": "ERROR",
+   "message": "clearance not certified >= 0.35 m (certified [0.350, 0.350] m)",
+   "data": {
+    "clearance": [
+     0.3497180261002647,
+     0.34979627184090134
+    ]
+   }
+  },
+  {
+   "k": 323,
+   "t": 3.23,
+   "name": "COLLISION",
+   "level": "ERROR",
+   "message": "robot sphere (r = 0.25 m) contacts an obstacle in [3.23, 3.24] s at 0.22 m/s; certified clearance [0.2497, 0.2497] m, penetration up to 0.3 mm; run terminated (no contact dynamics modelled)",
+   "data": {
+    "clearance": [
+     0.24966304769285733,
+     0.24974337594954488
+    ],
+    "speed": 0.21553693886658934,
+    "penetration_m": 0.0003369523071426739
+   }
+  }
+ ],
+ "trajectories": [
+  {
+   "id": 0,
+   "label": "original",
+   "knots": [
+    0.0,
+    5.154639175257731
+   ],
+   "coeffs": [
+    [
+     [
+      2.0,
+      4.0,
+      2.0
+     ],
+     [
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.0,
+      0.0,
+      0.0
+     ],
+     [
+      0.5841107200000002,
+      0.0,
+      0.0
+     ],
+     [
+      -0.16997621952000008,
+      0.0,
+      0.0
+     ],
+     [
+      0.013190154634752007,
+      0.0,
+      0.0
+     ]
+    ]
+   ],
+   "hold_point": null
+  }
+ ],
+ "supervisor": {
+  "update": "D2_too_close_margin",
+  "t_appear": 2.0,
+  "t_detect": 2.2,
+  "speed_at_appear": 2.62530198614016,
+  "speed_at_detect": 2.781058300760493,
+  "stopping_distance_baseline_m": 1.9362923489139598,
+  "distance_to_contact_m": 2.2550927773415355,
+  "distance_to_conflict_m": 2.053459067963309,
+  "conflict_check_s": 0.00013499998021870852,
+  "conflict_check_within_decision_budget": true,
+  "conflict": true,
+  "t_brake": 2.3000000000000003,
+  "speed_at_brake": 2.843007506372457,
+  "braking_distance_m": 1.3471152802150224,
+  "t_stop": 3.2476691687908192,
+  "stop_point": [
+   6.546322480308427,
+   4.0,
+   2.0
+  ],
+  "travel_after_appear_m": 2.170971284316362,
+  "stop_min_clearance": [
+   0.3283709445507199,
+   0.3290287156836378
+  ],
+  "hold_clearance": 0.3290287156836378,
+  "hold_clearance_meets_trajectory_tier": false,
+  "outcome": "stop_margin_violation",
+  "goal_reached": false,
+  "assess_wall_s": 0.0026433999883010983
+ },
+ "replan": null,
+ "metrics": {
+  "goal_reached": false,
+  "safety_pass": false,
+  "mission_success": false,
+  "checks": {
+   "no_collision": false,
+   "clearance_ge_nominal": false,
+   "tracking_within_allowance": true,
+   "speed_within_limit": true,
+   "accel_within_nominal_limit": true,
+   "braking_within_capability": true
+  },
+  "collision": true,
+  "final_mode": "COLLIDED",
+  "end_reason": "collision",
+  "execution_duration_s": 3.24,
+  "time_in_mode_s": {
+   "FOLLOWING": 2.3000000000000003,
+   "BRAKING": 0.9400000000000001
+  },
+  "tracking": {
+   "position_error": {
+    "max": 0.026395985710305436,
+    "rms": 0.02010283839062246,
+    "mean": 0.018518090126038337,
+    "p95": 0.02633002795212117
+   },
+   "velocity_error": {
+    "max": 0.03436934571148321,
+    "rms": 0.01957545034524586,
+    "mean": 0.016992884056809883,
+    "p95": 0.033891567186660795
+   },
+   "per_reference": {
+    "original": {
+     "position_error": {
+      "max": 0.026395985710305436,
+      "rms": 0.02010283839062246,
+      "mean": 0.018518090126038337,
+      "p95": 0.02633002795212117
+     },
+     "velocity_error": {
+      "max": 0.03436934571148321,
+      "rms": 0.01957545034524586,
+      "mean": 0.016992884056809883,
+      "p95": 0.033891567186660795
+     },
+     "steps": 230
+    }
+   },
+   "tracking_steps": 230
+  },
+  "max_speed": 2.839223663466818,
+  "max_reference_speed": 2.8381197092969987,
+  "max_accel_cmd_tracking_hold": 1.5399645502330979,
+  "max_accel_cmd_braking": 3.000000000000001,
+  "max_accel_net": 2.881490899866122,
+  "saturated_fraction": 0.0,
+  "governor_steps": 0,
+  "hold_drift_max": null,
+  "clearance": {
+   "before_update": [
+    1.619705101799328,
+    1.6197625522856476
+   ],
+   "after_update": [
+    0.24966304769285733,
+    0.24974337594954488
+   ],
+   "lower": 0.24966304769285733,
+   "upper": 0.24974337594954488,
+   "t_min": 3.23,
+   "p_min": [
+    6.623613231938104,
+    3.9707875312579213,
+    2.014743063278165
+   ]
+  },
+  "goal_error_final": 3.3745533794917892,
+  "goal_error_at_reference_end": 3.3745533794917892,
+  "speed_final": 0.18795383832992657,
+  "t_goal_reached": null
+ }
+}

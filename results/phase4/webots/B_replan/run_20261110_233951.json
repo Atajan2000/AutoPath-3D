@@ -1,0 +1,838 @@
+{
+ "scenario": "B_replan",
+ "description": "staging -> north aisle through the cross aisle; a forklift drives into the cross aisle",
+ "mission": {
+  "description": "staging -> north aisle through the cross aisle; a forklift drives into the cross aisle",
+  "start": [
+   -0.3,
+   -11.0
+  ],
+  "takeoff_height": 1.2,
+  "goal": [
+   0.0,
+   2.3,
+   1.2
+  ],
+  "planner": "astar",
+  "event": {
+   "name": "forklift",
+   "when_y_above": -9.2
+  }
+ },
+ "end_mode": "GOAL_REACHED",
+ "end_detail": "goal error 0.057 m",
+ "event_fired": true,
+ "goal_reached": true,
+ "final_position": [
+  -7.12841415696458e-05,
+  2.2994982233133436,
+  1.1985813949618238
+ ],
+ "final_goal_error_m": 0.001506420102909453,
+ "flight_duration_s": 45.72800000000001,
+ "takeoff_duration_s": 7.328,
+ "tracking_error_m": {
+  "n": 2304,
+  "max": 0.07831251936580731,
+  "rms": 0.021734213163409677,
+  "mean": 0.015141071792922595,
+  "p95": 0.04501451412312798,
+  "max_horizontal": 0.040280480784987645,
+  "max_vertical": 0.06717579027731024
+ },
+ "motion": {
+  "max_speed": 0.6866055506625621,
+  "max_accel": 1.3384009944337205,
+  "max_accel_horizontal": 1.3367545864959287,
+  "accel_window_s": 0.06399999999999295
+ },
+ "min_clearance_m": 0.478903445415608,
+ "min_clearance_position": [
+  -0.054905607670032504,
+  -4.53645926390731,
+  2.2525135936350686
+ ],
+ "clearance_reference": "drone centre to extracted collision geometry (AABB, lower bound)",
+ "robot_envelope_radius_m": 0.1,
+ "physical_collision_radius_m": 0.05,
+ "collision_events": 0,
+ "collision_samples": 0,
+ "first_collision_t": null,
+ "first_collision_points": null,
+ "planning": [
+  {
+   "planner": "astar",
+   "status": "success",
+   "reason": "",
+   "planning_time_s": 0.3042395729999967,
+   "wall_s": 0.5129720769999935,
+   "length_m": 13.409527692245703,
+   "waypoints": 133,
+   "validation": {
+    "valid": true,
+    "required_clearance": 0.37,
+    "gt_min_clearance": 0.751790555378883,
+    "voxel_min_clearance": 0.47,
+    "closest_obstacle": "642:workbench b/main frame",
+    "endpoints_match": true
+   }
+  }
+ ],
+ "trajectory": [
+  {
+   "status": "success",
+   "reason": "",
+   "wall_s": 0.5273944400000019,
+   "duration_s": 32.14416601960501,
+   "generation": {
+    "success": true,
+    "reason": "",
+    "generation_time_s": 0.0007212400000042862,
+    "rejected_candidates": 0,
+    "timing_adjustments": 0,
+    "rounds": 1,
+    "fallback_pieces": 1,
+    "lambdas": [
+     0.0,
+     0.0
+    ],
+    "speed_bound": 0.7759999999999999,
+    "accel_bound": 0.2575065512132098,
+    "duration": 32.14416601960501
+   },
+   "validation": {
+    "valid": true,
+    "failures": [],
+    "duration": 32.14416601960501,
+    "min_clearance_lower": 0.743932419896208,
+    "min_clearance_upper": 0.7449193859638207,
+    "max_speed_lower": 0.7759999999999999,
+    "max_speed_upper": 0.7759999999999999,
+    "max_accel_lower": 0.0743355374646997,
+    "max_accel_upper": 0.07433621280250625,
+    "max_position_jump": 0.0,
+    "max_velocity_jump": 0.0,
+    "max_accel_jump": 0.0,
+    "max_deviation_upper": 0.0009997766121566211
+   }
+  }
+ ],
+ "supervisor_report": {
+  "request": {
+   "goal": [
+    0.0,
+    2.3,
+    1.2
+   ],
+   "planner": "astar"
+  },
+  "t_request": 9.136,
+  "start": [
+   -0.30000460582657223,
+   -10.999999999999996,
+   1.2204455561782923
+  ],
+  "goal": [
+   0.0,
+   2.3,
+   1.2
+  ],
+  "planner": "astar",
+  "map_version": 1,
+  "updates": [
+   {
+    "name": "forklift",
+    "t_appear": 26.472,
+    "t_detect": 26.672,
+    "t_received": 26.672,
+    "state": {
+     "p": [
+      -0.21556678402214513,
+      -7.261175220604899,
+      1.214720478480368
+     ],
+     "v": [
+      0.015424893727939799,
+      0.6845355032895233,
+      -0.0010268005692770522
+     ],
+     "speed": 0.6847100385782059
+    },
+    "mode_at_update": "FOLLOWING",
+    "conflict_check_wall_s": 0.0008758839999956081,
+    "t_brake_command": 26.672,
+    "decision_latency_s": 0.0,
+    "stopping_assessment": {
+     "classification": "safe_stop_feasible",
+     "speed": 0.6847100385782059,
+     "direction": [
+      0.022527629009163424,
+      0.9997450960569455,
+      -0.0014996137217575985
+     ],
+     "worst_stop_distance": 0.761147632069761,
+     "best_stop_distance": 0.11063688983703578,
+     "lateral_radius": 0.35408933369526974,
+     "worst_stop_time": 1.2542818532529145,
+     "clearance_lower": 0.5883643759840843,
+     "clearance_upper": 1.4316780887301295,
+     "required_clearance": 0.2,
+     "robot_radius": 0.1,
+     "worst_stop_point": [
+      -0.19841993254567433,
+      -6.5002216080677995,
+      1.213579051047033
+     ],
+     "assumptions": {
+      "latency_s": 0.35,
+      "latency_min_s": 0.05,
+      "brake_decel": 1.2,
+      "brake_decel_max": 2.0,
+      "disturbance_accel": 0.1,
+      "tracking_accel": 0.5,
+      "position_error": 0.15,
+      "velocity_error": 0.1
+     }
+    },
+    "phase2_prediction": {
+     "update": "forklift",
+     "t_appear": 26.472,
+     "t_detect": 26.672,
+     "speed_at_appear": 0.6775457131541652,
+     "speed_at_detect": 0.6847100385782059,
+     "stopping_distance_baseline_m": 0.490181334829741,
+     "distance_to_contact_m": 2.808072251553062,
+     "distance_to_conflict_m": 2.540877509319991,
+     "conflict_check_s": 0.00025439499999890813,
+     "conflict_check_within_decision_budget": true,
+     "conflict": true,
+     "t_brake": 26.772000000000002,
+     "speed_at_brake": 0.6909713364165936,
+     "braking_distance_m": 0.2984008673433339,
+     "t_stop": 27.635714170520743,
+     "stop_point": [
+      -0.20758544596396344,
+      -6.902813482526117,
+      1.2141471157936339
+     ],
+     "travel_after_appear_m": 0.5037005212095554,
+     "stop_min_clearance": [
+      0.9804349024685353,
+      0.981033266751256
+     ],
+     "hold_clearance": 1.2012464400276348,
+     "hold_clearance_meets_trajectory_tier": true,
+     "safe_stop": true
+    },
+    "assess_wall_s": 0.882307088999994,
+    "conflict_agrees_with_phase2": true,
+    "t_rest": 28.176000000000002,
+    "hold_point": [
+     -0.20892689496566053,
+     -6.891877605084533,
+     1.2096059665923096
+    ],
+    "hold_clearance": 1.1921586806964888,
+    "measured_min_clearance": 0.9902373611123692,
+    "measured_min_clearance_lower": 0.9882612847678671,
+    "stop_distance_from_brake": 0.3693927113351914,
+    "stop_outcome": "safe_stop"
+   }
+  ],
+  "t_plan_call": 9.168000000000001,
+  "plan_service_wall_s": 3.7882340079999963,
+  "path_waypoints": 133,
+  "trajectory_result": {
+   "status": "success",
+   "reason": "",
+   "wall_s": 0.5273944400000019,
+   "duration_s": 32.14416601960501
+  },
+  "activations": [
+   {
+    "t": 14.016,
+    "t_start": 14.516,
+    "t_end": 46.66016602,
+    "mode": "FOLLOWING"
+   },
+   {
+    "t": 30.624000000000002,
+    "t_start": 31.108,
+    "t_end": 54.840760680115096,
+    "mode": "FOLLOWING_REPLAN"
+   }
+  ],
+  "bridge_events": [
+   {
+    "t": 14.032,
+    "source": "bridge",
+    "name": "TRAJECTORY_ACCEPTED",
+    "data": {
+     "traj_id": 0,
+     "t_start": 14.516,
+     "t_end": 46.66016602,
+     "stamp": 14.516
+    }
+   },
+   {
+    "t": 30.64,
+    "source": "bridge",
+    "name": "TRAJECTORY_ACCEPTED",
+    "data": {
+     "traj_id": 1,
+     "t_start": 31.108,
+     "t_end": 54.84076068,
+     "stamp": 31.108
+    }
+   },
+   {
+    "t": 54.848,
+    "source": "bridge",
+    "name": "TRAJECTORY_COMPLETE",
+    "data": {
+     "traj_id": 1,
+     "p": [
+      -0.001970057404263597,
+      2.268344610241765,
+      1.1507561654063287
+     ]
+    }
+   }
+  ],
+  "t_replan_start": 28.192,
+  "replan": {
+   "map_update_s": 1.0327445850000032,
+   "attempts": [
+    {
+     "attempt": 0,
+     "planner": "astar",
+     "status": "success",
+     "reason": "",
+     "compute_s": 1.422869355000003,
+     "planning_time_s": 0.3648780899999906,
+     "shortcut_time_s": 0.06913881900000263,
+     "generation_time_s": 0.023736145000000874,
+     "validation_time_s": 0.9519182340000043,
+     "path_length_m": 10.084892054819916,
+     "simplified_length_m": 9.572991585053305,
+     "duration_s": 23.732760680115092,
+     "rejected_candidates": 0,
+     "validation": {
+      "valid": true,
+      "failures": [],
+      "duration": 23.732760680115092,
+      "min_clearance_lower": 0.4586432838427433,
+      "min_clearance_upper": 0.4596348222461451,
+      "max_speed_lower": 0.6344743333936524,
+      "max_speed_upper": 0.6344744993223528,
+      "max_accel_lower": 0.3396540024049273,
+      "max_accel_upper": 0.33965464009345775,
+      "max_position_jump": 1.155698974712847e-14,
+      "max_velocity_jump": 3.447186692134416e-15,
+      "max_accel_jump": 9.930136612989092e-16,
+      "max_deviation_upper": 0.3242169942515709
+     }
+    }
+   ],
+   "replan_compute_s": 2.4556139400000063,
+   "hold_duration_s": 2.4556139400000063,
+   "outcome": "replanned",
+   "goal_reached": true,
+   "t_resume": 30.63161394000001,
+   "mission_end_t": 54.3643746201151,
+   "post_update_min_clearance": [
+    0.4586432838427433,
+    0.4596348222461451
+   ],
+   "replan_wall_s": 2.4558690390000066
+  },
+  "t_replan_done": 30.624000000000002,
+  "t_resume": 31.108,
+  "goal_error_m": 0.057291791380984385,
+  "end_mode": "GOAL_REACHED",
+  "end_detail": "goal error 0.057 m",
+  "t_end": 54.864000000000004
+ },
+ "realtime_factor_mission": 0.9708746428794014,
+ "wall_total_s": 86.37319684028625,
+ "map_info": {
+  "stamp": 26.672,
+  "resolution": 0.1,
+  "shape": [
+   198,
+   160,
+   56
+  ],
+  "lo": [
+   -9.9,
+   -12.4,
+   0.0
+  ],
+  "hi": [
+   9.9,
+   3.6,
+   5.6
+  ],
+  "n_voxels": 1774080,
+  "n_occupied": 199444,
+  "n_unknown": 0,
+  "n_primitives": 751,
+  "n_collision": 651,
+  "n_envelope": 8,
+  "n_visual_added": 89,
+  "visual_added": [
+   "oil barrel(1)/oil barrel(1)",
+   "oil barrel(1)/oil barrel(1)",
+   "oil barrel(1)/oil barrel(1)",
+   "oil barrel(2)/oil barrel(2)",
+   "oil barrel(2)/oil barrel(2)",
+   "oil barrel(2)/oil barrel(2)",
+   "oil barrel/oil barrel",
+   "oil barrel/oil barrel",
+   "oil barrel/oil barrel",
+   "L joint pipe/L joint pipe",
+   "lever valve/solid",
+   "lever valve/lever valve",
+   "large valve/solid",
+   "straight stairs/straight stairs",
+   "pallet stack staging/wooden pallet0",
+   "pallet stack staging/wooden pallet0",
+   "pallet stack staging/wooden pallet0",
+   "pallet stack staging/wooden pallet0",
+   "pallet stack staging/wooden pallet0",
+   "pallet stack staging/wooden pallet0",
+   "pallet stack staging/wooden pallet0",
+   "pallet stack staging/wooden pallet0",
+   "pallet stack staging/wooden pallet1",
+   "pallet stack staging/wooden pallet1",
+   "pallet stack staging/wooden pallet1",
+   "pallet stack staging/wooden pallet1",
+   "pallet stack staging/wooden pallet1",
+   "pallet stack staging/wooden pallet1",
+   "pallet stack staging/wooden pallet1",
+   "pallet stack staging/wooden pallet1",
+   "pallet stack staging/wooden pallet2",
+   "pallet stack staging/wooden pallet2",
+   "pallet stack staging/wooden pallet2",
+   "pallet stack staging/wooden pallet2",
+   "pallet stack staging/wooden pallet2",
+   "pallet stack staging/wooden pallet2",
+   "pallet stack staging/wooden pallet2",
+   "pallet stack staging/wooden pallet2",
+   "pallet stack staging/wooden pallet3",
+   "pallet stack staging/wooden pallet3",
+   "pallet stack staging/wooden pallet3",
+   "pallet stack staging/wooden pallet3",
+   "pallet stack staging/wooden pallet3",
+   "pallet stack staging/wooden pallet3",
+   "pallet stack staging/wooden pallet3",
+   "pallet stack staging/wooden pallet3",
+   "pallet stack staging/wooden pallet4",
+   "pallet stack staging/wooden pallet4",
+   "pallet stack staging/wooden pallet4",
+   "pallet stack staging/wooden pallet4",
+   "pallet stack staging/wooden pallet4",
+   "pallet stack staging/wooden pallet4",
+   "pallet stack staging/wooden pallet4",
+   "pallet stack staging/wooden pallet4",
+   "pallet stack staging/wooden pallet5",
+   "pallet stack staging/wooden pallet5",
+   "pallet stack staging/wooden pallet5",
+   "pallet stack staging/wooden pallet5",
+   "pallet stack staging/wooden pallet5",
+   "pallet stack staging/wooden pallet5",
+   "pallet stack staging/wooden pallet5",
+   "pallet stack staging/wooden pallet5",
+   "pallet stack staging/wooden pallet6",
+   "pallet stack staging/wooden pallet6",
+   "pallet stack staging/wooden pallet6",
+   "pallet stack staging/wooden pallet6",
+   "pallet stack staging/wooden pallet6",
+   "pallet stack staging/wooden pallet6",
+   "pallet stack staging/wooden pallet6",
+   "pallet stack staging/wooden pallet6",
+   "pallet stack staging/wooden pallet7",
+   "pallet stack staging/wooden pallet7",
+   "pallet stack staging/wooden pallet7",
+   "pallet stack staging/wooden pallet7",
+   "pallet stack staging/wooden pallet7",
+   "pallet stack staging/wooden pallet7",
+   "pallet stack staging/wooden pallet7",
+   "pallet stack staging/wooden pallet7",
+   "pallet stack staging/wooden pallet8",
+   "pallet stack staging/wooden pallet8",
+   "pallet stack staging/wooden pallet8",
+   "pallet stack staging/wooden pallet8",
+   "pallet stack staging/wooden pallet8",
+   "pallet stack staging/wooden pallet8",
+   "pallet stack staging/wooden pallet8",
+   "pallet stack staging/wooden pallet8",
+   "oil barrel east/oil barrel east",
+   "oil barrel east/oil barrel east",
+   "oil barrel east/oil barrel east"
+  ],
+  "n_updates": 3,
+  "build_s": 0.13195410999999524,
+  "unsupported_bounding_geometry": [],
+  "visual_unbounded": [
+   "forklift/forklift: CadShape"
+  ]
+ },
+ "events": [
+  {
+   "t": 0.016,
+   "source": "scene",
+   "name": "WORLD_EXTRACTED",
+   "data": {
+    "n_records": 667,
+    "unsupported": 0
+   }
+  },
+  {
+   "t": 0.016,
+   "source": "autopath_map",
+   "name": "MAP_PUBLISHED",
+   "data": {
+    "n_occupied": 196034,
+    "n_primitives": 748,
+    "n_visual_added": 89,
+    "n_updates": 0,
+    "build_s": 0.12356890099999873
+   }
+  },
+  {
+   "t": 0.256,
+   "source": "autopath_supervisor",
+   "name": "SUPERVISOR_MODE",
+   "data": {
+    "mode": "READY",
+    "detail": ""
+   }
+  },
+  {
+   "t": 0.304,
+   "source": "scene",
+   "name": "DRONE_PLACED",
+   "data": {
+    "xy": [
+     -0.3,
+     -11.0
+    ]
+   }
+  },
+  {
+   "t": 0.8160000000000001,
+   "source": "bridge",
+   "name": "TAKEOFF_START",
+   "data": {
+    "target": [
+     -0.30000460582278954,
+     -10.999999999999996,
+     1.2
+    ]
+   }
+  },
+  {
+   "t": 8.144,
+   "source": "bridge",
+   "name": "TAKEOFF_COMPLETE",
+   "data": {
+    "p": [
+     -0.3000046058354001,
+     -11.000000000000004,
+     1.2026795180179088
+    ]
+   }
+  },
+  {
+   "t": 9.136000000000001,
+   "source": "autopath_supervisor",
+   "name": "SUPERVISOR_MODE",
+   "data": {
+    "mode": "PLANNING",
+    "detail": "astar"
+   }
+  },
+  {
+   "t": 10.24,
+   "source": "autopath_planner",
+   "name": "CHECKER_BUILT",
+   "data": {
+    "map_version": 1,
+    "build_s": 1.2601746769999949
+   }
+  },
+  {
+   "t": 10.368,
+   "source": "autopath_supervisor",
+   "name": "SUPERVISOR_READY",
+   "data": {
+    "map_version": 1,
+    "build_s": 1.4599956679999977
+   }
+  },
+  {
+   "t": 12.656,
+   "source": "autopath_planner",
+   "name": "PLAN_RESULT",
+   "data": {
+    "request": 1,
+    "planner": "astar",
+    "status": "success",
+    "reason": "",
+    "planning_time_s": 0.3042395729999967,
+    "length_m": 13.409527692245703
+   }
+  },
+  {
+   "t": 12.656,
+   "source": "autopath_supervisor",
+   "name": "SUPERVISOR_MODE",
+   "data": {
+    "mode": "WAIT_TRAJECTORY",
+    "detail": ""
+   }
+  },
+  {
+   "t": 14.016,
+   "source": "autopath_trajectory",
+   "name": "TRAJECTORY_RESULT",
+   "data": {
+    "request": 1,
+    "status": "success",
+    "reason": "",
+    "duration_s": 32.14416601960501,
+    "generation_time_s": 0.0007212400000042862
+   }
+  },
+  {
+   "t": 14.016,
+   "source": "autopath_supervisor",
+   "name": "SUPERVISOR_MODE",
+   "data": {
+    "mode": "FOLLOWING",
+    "detail": ""
+   }
+  },
+  {
+   "t": 14.032,
+   "source": "bridge",
+   "name": "TRAJECTORY_ACCEPTED",
+   "data": {
+    "traj_id": 0,
+    "t_start": 14.516,
+    "t_end": 46.66016602,
+    "stamp": 14.516
+   }
+  },
+  {
+   "t": 23.44,
+   "source": "autopath_mission",
+   "name": "SCENARIO_EVENT_TRIGGERED",
+   "data": {
+    "event": {
+     "name": "forklift"
+    },
+    "p": [
+     -0.25915923904764104,
+     -9.19528703086111,
+     1.2177633418378402
+    ],
+    "v": [
+     0.011231961136840433,
+     0.4981444137943093,
+     -0.0006465281380103668
+    ]
+   }
+  },
+  {
+   "t": 23.456,
+   "source": "scene",
+   "name": "OBSTACLE_MOVING",
+   "data": {
+    "object": "forklift"
+   }
+  },
+  {
+   "t": 26.464000000000002,
+   "source": "scene",
+   "name": "OBSTACLE_APPEARED",
+   "data": {
+    "object": "forklift",
+    "t_appear": 26.464000000000002,
+    "records": [
+     {
+      "object": "forklift",
+      "solid": "forklift",
+      "kind": "box",
+      "lo": [
+       -1.0450807109594944,
+       -4.5,
+       0.020000000000000018
+      ],
+      "hi": [
+       0.9049192890405056,
+       -3.5,
+       0.92
+      ],
+      "source": "collision"
+     },
+     {
+      "object": "forklift",
+      "solid": "forklift",
+      "kind": "box",
+      "lo": [
+       -0.6500807109594945,
+       -4.5,
+       0.925
+      ],
+      "hi": [
+       0.8499192890405055,
+       -3.5,
+       1.7750000000000001
+      ],
+      "source": "collision"
+     },
+     {
+      "object": "forklift",
+      "solid": "forklift",
+      "kind": "box",
+      "lo": [
+       0.8999192890405054,
+       -4.25,
+       0.14500000000000005
+      ],
+      "hi": [
+       1.4399192890405055,
+       -3.75,
+       0.19500000000000003
+      ],
+      "source": "collision"
+     }
+    ]
+   }
+  },
+  {
+   "t": 26.672,
+   "source": "scene",
+   "name": "OBSTACLE_UPDATE_PUBLISHED",
+   "data": {
+    "object": "forklift",
+    "t_appear": 26.464000000000002,
+    "t_detect": 26.672
+   }
+  },
+  {
+   "t": 26.672,
+   "source": "autopath_supervisor",
+   "name": "SUPERVISOR_MODE",
+   "data": {
+    "mode": "BRAKING",
+    "detail": "forklift"
+   }
+  },
+  {
+   "t": 26.688,
+   "source": "bridge",
+   "name": "BRAKE_START",
+   "data": {
+    "p": [
+     -0.2153197321719421,
+     -7.2502113817049505,
+     1.2147040304270484
+    ],
+    "request_t": 26.672
+   }
+  },
+  {
+   "t": 26.672,
+   "source": "autopath_map",
+   "name": "MAP_PUBLISHED",
+   "data": {
+    "n_occupied": 199444,
+    "n_primitives": 751,
+    "n_visual_added": 89,
+    "n_updates": 3,
+    "build_s": 0.13195410999999524
+   }
+  },
+  {
+   "t": 27.584000000000003,
+   "source": "autopath_supervisor",
+   "name": "STOP_ASSESSED",
+   "data": {
+    "name": "forklift",
+    "conservative": "safe_stop_feasible",
+    "phase2_conflict": true
+   }
+  },
+  {
+   "t": 28.176000000000002,
+   "source": "bridge",
+   "name": "AT_REST",
+   "data": {
+    "p": [
+     -0.20892689496566053,
+     -6.891877605084533,
+     1.2096059665923096
+    ],
+    "v": [
+     -0.0004165312303873261,
+     0.02018333805031041,
+     0.011361530088983352
+    ]
+   }
+  },
+  {
+   "t": 28.176000000000002,
+   "source": "autopath_supervisor",
+   "name": "SUPERVISOR_MODE",
+   "data": {
+    "mode": "REPLANNING",
+    "detail": "forklift"
+   }
+  },
+  {
+   "t": 30.624000000000002,
+   "source": "autopath_supervisor",
+   "name": "SUPERVISOR_MODE",
+   "data": {
+    "mode": "FOLLOWING_REPLAN",
+    "detail": ""
+   }
+  },
+  {
+   "t": 30.64,
+   "source": "bridge",
+   "name": "TRAJECTORY_ACCEPTED",
+   "data": {
+    "traj_id": 1,
+    "t_start": 31.108,
+    "t_end": 54.84076068,
+    "stamp": 31.108
+   }
+  },
+  {
+   "t": 54.848,
+   "source": "bridge",
+   "name": "TRAJECTORY_COMPLETE",
+   "data": {
+    "traj_id": 1,
+    "p": [
+     -0.001970057404263597,
+     2.268344610241765,
+     1.1507561654063287
+    ]
+   }
+  },
+  {
+   "t": 54.864000000000004,
+   "source": "autopath_supervisor",
+   "name": "SUPERVISOR_MODE",
+   "data": {
+    "mode": "GOAL_REACHED",
+    "detail": "goal error 0.057 m"
+   }
+  }
+ ]
+}

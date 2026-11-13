@@ -1,0 +1,28 @@
+# Phase 2: trajectory generation and replanning. Robot geometry identical to Phase 1.
+clearance:
+  robot_radius: 0.25        # m
+  safety_margin: 0.10       # m   -> nominal geometric clearance 0.35 m
+  tracking_allowance: 0.10  # m   -> trajectory clearance 0.45 m (room for controller error)
+
+limits:                     # translational double integrator
+  max_speed: 3.0            # m/s
+  max_acceleration: 2.0     # m/s^2 (|a|, nominal trajectories)
+  max_deceleration: 3.0     # m/s^2 (emergency braking)
+  limit_margin: 0.97        # generator targets 97% of the limits
+
+supervisor:
+  detection_latency_s: 0.2
+  decision_latency_s: 0.1
+
+map:
+  resolution: 0.2
+  clearance_cap: 3.0
+
+planners:                   # same parameters as Phase 1 (RRT*: seed 0 only)
+  astar: {planner: astar, connectivity: 26}
+  rrt_star: {planner: rrt_star, max_iterations: 10000, step_size: 2.5, goal_bias: 0.05, seed: 0}
+
+scenes: [warehouse, urban_canyon, industrial, multilevel, narrow_1200, narrow_900, narrow_500]
+phase1_runs: results/phase1/runs.json
+stopping_table:
+  speeds: [0.5, 1.0, 1.5, 2.0, 2.5, 3.0]

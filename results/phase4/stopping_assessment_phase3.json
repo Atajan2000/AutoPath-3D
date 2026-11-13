@@ -1,0 +1,272 @@
+[
+ {
+  "run": "scn__D1_too_close_collision__gusts",
+  "disturbance": "gusts",
+  "phase2_prediction": "unavoidable_collision",
+  "phase2_predicted_hold_clearance": 0.27097128431636186,
+  "phase3_actual": "collision",
+  "phase3_collision": true,
+  "phase3_min_clearance_after_appear": [
+   0.24488080476926458,
+   0.2449531761467867
+  ],
+  "assessment": {
+   "classification": "collision_possible",
+   "speed": 2.781058300760493,
+   "direction": [
+    0.9999812117991695,
+    -0.0059739649764917096,
+    0.0013739691131996114
+   ],
+   "worst_stop_distance": 2.061306893990181,
+   "best_stop_distance": 1.408849290928219,
+   "lateral_radius": 0.3396313548356109,
+   "worst_stop_time": 1.2717280235505788,
+   "clearance_lower": -0.34461035699500747,
+   "clearance_upper": 0.3396313548356109,
+   "required_clearance": 0.35,
+   "robot_radius": 0.25,
+   "worst_stop_point": [
+    6.993063294441763,
+    3.9960571181029425,
+    2.0079967991644803
+   ],
+   "assumptions": {
+    "latency_s": 0.1,
+    "latency_min_s": 0.1,
+    "brake_decel": 3.0,
+    "brake_decel_max": 3.0,
+    "disturbance_accel": 0.42,
+    "tracking_accel": 2.0,
+    "position_error": 0.0,
+    "velocity_error": 0.0
+   }
+  },
+  "actual_consistent_with_bounds": true
+ },
+ {
+  "run": "scn__D1_too_close_collision__ideal",
+  "disturbance": "ideal",
+  "phase2_prediction": "unavoidable_collision",
+  "phase2_predicted_hold_clearance": 0.27097128431636186,
+  "phase3_actual": "collision",
+  "phase3_collision": true,
+  "phase3_min_clearance_after_appear": [
+   0.23611222543676735,
+   0.2361872254367663
+  ],
+  "assessment": {
+   "classification": "collision_unavoidable",
+   "speed": 2.786602686683445,
+   "direction": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "worst_stop_distance": 1.77529287001914,
+   "best_stop_distance": 1.5728526909069103,
+   "lateral_radius": 0.0,
+   "worst_stop_time": 1.0955342288944818,
+   "clearance_lower": -0.004986777724772865,
+   "clearance_upper": 0.0,
+   "required_clearance": 0.35,
+   "robot_radius": 0.25,
+   "worst_stop_point": [
+    6.692875988732651,
+    4.0,
+    2.0
+   ],
+   "assumptions": {
+    "latency_s": 0.1,
+    "latency_min_s": 0.1,
+    "brake_decel": 3.0,
+    "brake_decel_max": 3.0,
+    "disturbance_accel": 0.0,
+    "tracking_accel": 2.0,
+    "position_error": 0.0,
+    "velocity_error": 0.0
+   }
+  },
+  "actual_consistent_with_bounds": true
+ },
+ {
+  "run": "scn__D2_too_close_margin__gusts",
+  "disturbance": "gusts",
+  "phase2_prediction": "stop_margin_violation",
+  "phase2_predicted_hold_clearance": 0.3290287156836378,
+  "phase3_actual": "collision",
+  "phase3_collision": true,
+  "phase3_min_clearance_after_appear": [
+   0.24966304769285733,
+   0.24974337594954488
+  ],
+  "assessment": {
+   "classification": "collision_possible",
+   "speed": 2.781058300760493,
+   "direction": [
+    0.9999812117991695,
+    -0.0059739649764917096,
+    0.0013739691131996114
+   ],
+   "worst_stop_distance": 2.061306893990181,
+   "best_stop_distance": 1.408849290928219,
+   "lateral_radius": 0.3396313548356109,
+   "worst_stop_time": 1.2717280235505788,
+   "clearance_lower": -0.34461035699500747,
+   "clearance_upper": 0.8743646009433959,
+   "required_clearance": 0.35,
+   "robot_radius": 0.25,
+   "worst_stop_point": [
+    6.993063294441763,
+    3.9960571181029425,
+    2.0079967991644803
+   ],
+   "assumptions": {
+    "latency_s": 0.1,
+    "latency_min_s": 0.1,
+    "brake_decel": 3.0,
+    "brake_decel_max": 3.0,
+    "disturbance_accel": 0.42,
+    "tracking_accel": 2.0,
+    "position_error": 0.0,
+    "velocity_error": 0.0
+   }
+  },
+  "actual_consistent_with_bounds": true
+ },
+ {
+  "run": "scn__D2_too_close_margin__ideal",
+  "disturbance": "ideal",
+  "phase2_prediction": "stop_margin_violation",
+  "phase2_predicted_hold_clearance": 0.3290287156836378,
+  "phase3_actual": "stop_margin_violation",
+  "phase3_collision": false,
+  "phase3_min_clearance_after_appear": [
+   0.32894349806974255,
+   0.32900103417060045
+  ],
+  "assessment": {
+   "classification": "collision_possible",
+   "speed": 2.786602686683445,
+   "direction": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "worst_stop_distance": 1.77529287001914,
+   "best_stop_distance": 1.5728526909069103,
+   "lateral_radius": 0.0,
+   "worst_stop_time": 1.0955342288944818,
+   "clearance_lower": 0.1824752072594132,
+   "clearance_upper": 0.3849153863716426,
+   "required_clearance": 0.35,
+   "robot_radius": 0.25,
+   "worst_stop_point": [
+    6.692875988732651,
+    4.0,
+    2.0
+   ],
+   "assumptions": {
+    "latency_s": 0.1,
+    "latency_min_s": 0.1,
+    "brake_decel": 3.0,
+    "brake_decel_max": 3.0,
+    "disturbance_accel": 0.0,
+    "tracking_accel": 2.0,
+    "position_error": 0.0,
+    "velocity_error": 0.0
+   }
+  },
+  "actual_consistent_with_bounds": true
+ },
+ {
+  "run": "scn__D3_far_enough__gusts",
+  "disturbance": "gusts",
+  "phase2_prediction": "safe_stop",
+  "phase2_predicted_hold_clearance": 0.7477992754935417,
+  "phase3_actual": "replanned",
+  "phase3_collision": false,
+  "phase3_min_clearance_after_appear": [
+   0.5814074488070244,
+   0.5900636210788855
+  ],
+  "assessment": {
+   "classification": "collision_possible",
+   "speed": 2.781058300760493,
+   "direction": [
+    0.9999812117991695,
+    -0.0059739649764917096,
+    0.0013739691131996114
+   ],
+   "worst_stop_distance": 2.061306893990181,
+   "best_stop_distance": 1.408849290928219,
+   "lateral_radius": 0.3396313548356109,
+   "worst_stop_time": 1.2717280235505788,
+   "clearance_lower": 0.24863106396837564,
+   "clearance_upper": 0.9328610601492723,
+   "required_clearance": 0.35,
+   "robot_radius": 0.25,
+   "worst_stop_point": [
+    6.993063294441763,
+    3.9960571181029425,
+    2.0079967991644803
+   ],
+   "assumptions": {
+    "latency_s": 0.1,
+    "latency_min_s": 0.1,
+    "brake_decel": 3.0,
+    "brake_decel_max": 3.0,
+    "disturbance_accel": 0.42,
+    "tracking_accel": 2.0,
+    "position_error": 0.0,
+    "velocity_error": 0.0
+   }
+  },
+  "actual_consistent_with_bounds": true
+ },
+ {
+  "run": "scn__D3_far_enough__ideal",
+  "disturbance": "ideal",
+  "phase2_prediction": "safe_stop",
+  "phase2_predicted_hold_clearance": 0.7477992754935417,
+  "phase3_actual": "replanned",
+  "phase3_collision": false,
+  "phase3_min_clearance_after_appear": [
+   0.5901500699556999,
+   0.5999999999999996
+  ],
+  "assessment": {
+   "classification": "safe_stop_feasible",
+   "speed": 2.786602686683445,
+   "direction": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "worst_stop_distance": 1.77529287001914,
+   "best_stop_distance": 1.5728526909069103,
+   "lateral_radius": 0.0,
+   "worst_stop_time": 1.0955342288944818,
+   "clearance_lower": 0.5950132222752268,
+   "clearance_upper": 0.5999999999999996,
+   "required_clearance": 0.35,
+   "robot_radius": 0.25,
+   "worst_stop_point": [
+    6.692875988732651,
+    4.0,
+    2.0
+   ],
+   "assumptions": {
+    "latency_s": 0.1,
+    "latency_min_s": 0.1,
+    "brake_decel": 3.0,
+    "brake_decel_max": 3.0,
+    "disturbance_accel": 0.0,
+    "tracking_accel": 2.0,
+    "position_error": 0.0,
+    "velocity_error": 0.0
+   }
+  },
+  "actual_consistent_with_bounds": true
+ }
+]

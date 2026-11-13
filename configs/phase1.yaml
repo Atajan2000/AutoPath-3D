@@ -1,0 +1,38 @@
+# Phase 1 benchmark: identical maps, start/goal pairs, robot envelope for both planners.
+robot:
+  radius: 0.25          # m, bounding sphere of frame + propellers
+  safety_margin: 0.10   # m  -> required clearance c = 0.35 m
+
+map:
+  resolution: 0.2       # m
+  treat_unknown_as_occupied: true
+  clearance_cap: 3.0    # m, clearance field exact below this value
+
+astar:
+  connectivity: 26
+  connect_radius_voxels: 3.0   # max start/goal-to-lattice link radius (in voxel diagonals)
+
+rrt_star:
+  max_iterations: 10000
+  step_size: 2.5        # m
+  goal_bias: 0.05
+  gamma_factor: 1.0
+  time_limit_s: 120.0   # safety cap only; runs are budgeted by iterations
+  seeds: [0, 1, 2, 3, 4]
+
+scenes: [warehouse, urban_canyon, industrial, multilevel, narrow_1200, narrow_900, narrow_500]
+
+measure_memory: true    # separate tracemalloc runs (A*: every task, RRT*: seed 0)
+
+studies:
+  resolution:
+    resolutions: [0.1, 0.2, 0.4]
+    tasks: [[narrow_900, through_window], [warehouse, aisle_to_aisle]]
+    rrt_seeds: [0, 1, 2]
+  connectivity:
+    values: [6, 18, 26]
+    tasks: [[warehouse, cross_warehouse], [industrial, ground_to_mezzanine]]
+  rrt_budget:
+    iterations: [2500, 5000, 10000, 20000]
+    tasks: [[industrial, cross_hall], [multilevel, ground_to_top]]
+    seeds: [0, 1, 2, 3, 4]

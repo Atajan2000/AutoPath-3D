@@ -1,0 +1,41 @@
+# Phase 3: closed-loop simulation of the Phase 2 trajectories and obstacle-update scenarios.
+# Robot geometry, limits, supervisor latencies, map and planner settings are read unchanged
+# from the Phase 2 configuration.
+phase2_config: configs/phase2.yaml
+phase2_results: results/phase2/results.json
+
+simulation:                 # translational double integrator, zero-order hold
+  dt: 0.01                  # s, control + integration period (100 Hz)
+  goal_position_tol: 0.10   # m
+  goal_speed_tol: 0.10      # m/s
+  settle_timeout_s: 5.0     # s allowed after the reference ends
+  hold_speed_tol: 0.05      # m/s, at-rest test before the hold is verified
+  post_abort_hold_s: 3.0    # s simulated after an aborted mission
+  max_sim_time_s: 600.0
+
+controller:                 # feedforward + PD, critically damped, w = 3 rad/s
+  kp: 9.0                   # 1/s^2
+  kd: 6.0                   # 1/s
+  a_track_max: 2.0          # m/s^2 = Phase 2 max_acceleration (tracking and holding)
+  a_brake_max: 3.0          # m/s^2 = Phase 2 max_deceleration (emergency braking)
+  v_max: 3.0                # m/s  = Phase 2 max_speed
+
+# Disturbance profiles (simulation/dynamics.py). The first one is the default: its time
+# series are saved and shown by the viewer. "ideal" = no disturbance (reference check).
+disturbances: [gusts, ideal]
+
+navigation:                 # every Phase 2 pipeline (scene x task x planner) is attempted
+  planners: [astar, rrt_star]
+
+# Viewer entries: name -> saved run. Exploration data (A* expansions, RRT* tree) is produced
+# for these entries only, by narrowly scoped deterministic reruns.
+viewer:
+  multilevel_navigation: {kind: navigation, scene: multilevel, task: ground_to_top, planner: astar}
+  warehouse_navigation:  {kind: navigation, scene: warehouse, task: aisle_to_aisle, planner: astar}
+  warehouse_replan:      {kind: scenario, scenario: A_warehouse_aisle_blocked}
+  urban_replan:          {kind: scenario, scenario: B_urban_scaffold}
+  no_route:              {kind: scenario, scenario: C_narrow_window_sealed}
+  unsafe_stop:           {kind: scenario, scenario: D1_too_close_collision}
+  unsafe_margin:         {kind: scenario, scenario: D2_too_close_margin}
+  safe_stop_replan:      {kind: scenario, scenario: D3_far_enough}
+  replan_retry:          {kind: scenario, scenario: E_warehouse_retry}

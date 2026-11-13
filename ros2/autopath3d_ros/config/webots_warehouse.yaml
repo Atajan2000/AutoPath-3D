@@ -1,0 +1,134 @@
+# AutoPath-3D Phase 4: Webots warehouse + Crazyflie. Separate from configs/phase1-3.yaml: the
+# Phase 1-3 benchmark geometry (0.25 m sphere, 0.2 m voxels) and its results are unchanged.
+
+frames:
+  map: map              # = Webots world frame: ENU (x east, y north, z up), metres, seconds (sim time)
+  base: base_link       # Crazyflie body: FLU (x forward, y left, z up), origin = Robot origin
+
+# Planning geofence: interior of the factory walls (x, y), floor to 5.6 m (ceiling at 7.0 m).
+# Must be integer multiples of the resolution. Outside the bounds counts as blocked.
+bounds: {lo: [-9.9, -12.4, 0.0], hi: [9.9, 3.6, 5.6]}
+
+map:
+  # 0.1 m: the narrowest passage that must stay open (1.0 m cage doorway) has to keep a free
+  # lattice band after conservative voxelisation (<= 1 voxel lost per face) and a 2 x 0.35 m
+  # trajectory clearance; 0.2 m would lose it (cf. Phase 1 narrow_900). 1.77 M voxels.
+  resolution: 0.1
+  clearance_cap: 2.0
+  treat_unknown_as_occupied: true
+  envelope_objects: ["rack *"]      # rack bays treated as fully occupied (conservative)
+
+robot:                  # Webots Crazyflie (not the 0.25 m Phase 1-3 benchmark sphere)
+  radius: 0.10          # m; encloses body + propeller tips (0.069 m from the centre) in any attitude;
+                        # Webots collision body: cylinder r 0.05 m, h 0.03 m
+  safety_margin: 0.10   # m  -> nominal clearance 0.20 m
+  tracking_allowance: 0.17   # m -> trajectory clearance 0.37 m. Characterisation
+                             # (results/phase4/webots/characterisation/characterisation_20261110_232847.json):
+                             # max tracking error 0.075 / 0.083 / 0.100 m horizontally at 0.6 / 0.8 / 1.0 m/s,
+                             # 0.096 / 0.098 m climbing / descending at 0.5 m/s, 0.085 m diagonal at 0.8 m/s
+                             # (no wind); 0.17 m keeps a 1.7x factor over the worst axis.
+                             # Why not 0.15 (c = 0.35): the checker's clearance is a lower bound to blocked
+                             # voxel cubes, so from A* lattice nodes (cell centres) it takes the values
+                             # res/2 * sqrt(sum of odd squares); 0.35 = 7 x 0.05 is one of them at 0.1 m
+                             # (independent of where the world faces lie; audit 2026-11-11). A* accepts
+                             # nodes at exactly c, but the (unchanged) Lipschitz segment certification
+                             # can never certify an edge on which the bound stays flat at exactly c ->
+                             # Demo A run 1 failed with "shortcut_rejected" (2026-11-10). 0.37 is not a
+                             # tie value (nearest: 0.354 and 0.381). 0.15 would have covered the measured
+                             # tracking error; the extra 0.02 m is for the tie, not for tracking.
+
+limits:                 # applied to the generated trajectories (Webots-specific, see characterisation)
+  max_speed: 0.8        # m/s; the bridge outer loop saturates at 1.0 m/s (v_xy_max): a 1.2 m/s request
+                        # reached only 1.0 m/s with 0.36 m tracking error, so 0.8 m/s leaves 20 % headroom
+  max_acceleration: 0.5 # m/s^2
+  max_deceleration: 0.8 # m/s^2 (only used by the Phase 2 nominal stop prediction; measured effective
+                        # braking 1.36-1.71 m/s^2, so this prediction over-estimates the stop distance)
+  limit_margin: 0.97
+
+supervisor:
+  detection_latency_s: 0.2    # scene manager publishes an update 0.2 s (sim) after the obstacle appears
+  decision_latency_s: 0.1     # Phase 2 protocol value; the actual ROS latency is measured and reported
+  replan_attempts:
+    - {planner: astar, connectivity: 26}
+
+planners:
+  astar: {planner: astar, connectivity: 26}
+  rrt_star: {planner: rrt_star, max_iterations: 6000, step_size: 1.5, goal_bias: 0.05, seed: 0}
+
+# Conservative stopping assessment (Phase 4). Bounds come from the Webots Crazyflie
+# characterisation (results/phase4/webots/characterisation/), not from the Phase 3 point mass.
+# Measured (brake command -> rest): deceleration onset 0.208 s at 0.6/0.8/1.0 m/s (ROS command
+# delivery 0.016 s of it); stop distance from the command 0.257 / 0.372 / 0.504 m, i.e. an effective
+# deceleration after the onset of 1.36 / 1.55 / 1.71 m/s^2.
+stopping_assumptions:
+  latency_s: 0.35            # measured 0.208 s + 0.14 s allowance for the supervisor's own processing
+  latency_min_s: 0.05
+  brake_decel: 1.2           # guaranteed m/s^2 (below the lowest measured 1.36)
+  brake_decel_max: 2.0       # best case (above the highest measured 1.71)
+  disturbance_accel: 0.1     # unmodelled-dynamics bound (no wind in the Webots world)
+  tracking_accel: 0.5        # = limits.max_acceleration
+  position_error: 0.15       # true-vs-measured position bound; GPS is noise-free in this world, so this is
+                             # a generous allowance. Set equal to the tracking allowance when that was
+                             # 0.15 and not raised with it to 0.17; kept, since that +0.02 m is the A* tie
+                             # workaround, not a measurement error. Recorded B/C1/C2 assessments use 0.15.
+  velocity_error: 0.1
+
+bridge:                      # outer loop on top of the Bitcraze PID (see tracking.py)
+  kp_xy: 1.2
+  accel_lead_s: 0.25
+  z_lead_s: 0.0              # was 0.4: Demo A (2026-11-10) showed z_err = 0.42 vz - 0.33 az (resid 0.013 m),
+                             # i.e. the Bitcraze altitude PID follows the set-point without lag and the
+                             # lead only made the drone run ahead of the reference (0.20 m in descents)
+  v_xy_max: 1.0
+  z_step_max: 0.6
+  yaw_kp: 1.0
+  yaw_rate_max: 1.0
+  rest_speed: 0.05           # m/s: braking ends when below this ...
+  rest_time_s: 0.3           # ... for this long
+  takeoff_climb_rate: 0.4    # m/s, takeoff/landing altitude ramp
+
+takeoff_height: 1.0
+
+# Scripted obstacle motions performed by the scene manager (Webots supervisor) on request.
+scene_events:
+  forklift: {from: [-4.6, -4.0], to: [0.0, -4.0], duration: 3.0}   # parked -> into the cross aisle
+  gate: {dy: 1.42, duration: 1.0}       # = door width 1.4 + 0.02 (tools/build_warehouse_world.py CAGE)
+
+# Missions (start = floor position of the drone; the mission starts after takeoff to takeoff_height
+# or the given altitude). Scenario events are triggered by the mission runner from the measured state.
+missions:
+  A_navigation:
+    description: "staging area -> mezzanine landing (around racks, climb over the mezzanine rail)"
+    start: [-8.5, -11.0]
+    takeoff_height: 1.0
+    goal: [9.25, -4.0, 3.9]
+    planner: astar
+  A2_around_racks:
+    description: "west aisle -> east part of aisle C (around the rack rows)"
+    start: [-8.5, -11.0]
+    takeoff_height: 1.2
+    goal: [5.0, -1.0, 1.6]
+    planner: rrt_star
+  B_replan:
+    description: "staging -> north aisle through the cross aisle; a forklift drives into the cross aisle"
+    start: [-0.3, -11.0]
+    takeoff_height: 1.2
+    goal: [0.0, 2.3, 1.2]
+    planner: astar
+    event: {name: forklift, when_y_above: -9.2}
+  C1_no_route:
+    description: "into the storage cage; the gate closes during the approach -> no route, hold"
+    start: [3.0, -10.2]   # (3.6, -10.4) was 0.43 m from column 4: exact clearance >= 0.37 but the
+                          # conservative voxel lower bound 0.361 < 0.37 (offline test)
+    takeoff_height: 1.0
+    goal: [8.4, -11.0, 1.0]
+    planner: astar
+    event: {name: gate, when_x_above: 4.4}
+  C2_unsafe_stop:
+    description: "fast aisle flight; a load drops just ahead -> insufficient stopping distance"
+    start: [-7.8, -7.0]   # (-8.5, -7) was 0.35 m from column 0 (= the trajectory clearance; the
+                          # offline test test_mission_endpoints_have_trajectory_clearance caught it)
+    takeoff_height: 1.2
+    goal: [6.5, -7.0, 1.2]
+    planner: astar
+    event: {name: drop_load, when_x_above: -1.0, ahead_m: 0.55}

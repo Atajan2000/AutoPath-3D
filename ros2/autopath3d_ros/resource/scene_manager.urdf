@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<robot name="AutoPath Scene Manager">
+    <webots>
+        <plugin type="autopath3d_ros.scene_manager.AutoPathSceneManager" />
+    </webots>
+</robot>

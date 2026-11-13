@@ -1,0 +1,474 @@
+{
+ "scenario": "A_navigation",
+ "description": "staging area -> mezzanine landing (around racks, climb over the mezzanine rail)",
+ "mission": {
+  "description": "staging area -> mezzanine landing (around racks, climb over the mezzanine rail)",
+  "start": [
+   -8.5,
+   -11.0
+  ],
+  "takeoff_height": 1.0,
+  "goal": [
+   9.25,
+   -4.0,
+   3.9
+  ],
+  "planner": "astar"
+ },
+ "end_mode": "GOAL_REACHED",
+ "end_detail": "goal error 0.069 m",
+ "event_fired": false,
+ "goal_reached": true,
+ "final_position": [
+  9.249774066594334,
+  -4.000069594321525,
+  3.8897510436104215
+ ],
+ "final_goal_error_m": 0.010251682610618876,
+ "flight_duration_s": 69.904,
+ "takeoff_duration_s": 7.055999999999999,
+ "tracking_error_m": {
+  "n": 3163,
+  "max": 0.204645940960903,
+  "rms": 0.05887878333339269,
+  "mean": 0.0447221077619667,
+  "p95": 0.1495411702719622,
+  "max_horizontal": 0.033571495212182154,
+  "max_vertical": 0.2029211919833629
+ },
+ "motion": {
+  "max_speed": 0.7000963890336466,
+  "max_accel": 0.6508339206020017,
+  "max_accel_horizontal": 0.19186441304233381,
+  "accel_window_s": 0.06399999999999295
+ },
+ "min_clearance_m": 0.41025827306050006,
+ "min_clearance_position": [
+  -0.6676243932296997,
+  -9.355438300183192,
+  1.9706044541932959
+ ],
+ "clearance_reference": "drone centre to extracted collision geometry (AABB, lower bound)",
+ "robot_envelope_radius_m": 0.1,
+ "physical_collision_radius_m": 0.05,
+ "collision_events": 0,
+ "collision_samples": 0,
+ "first_collision_t": null,
+ "first_collision_points": null,
+ "planning": [
+  {
+   "planner": "astar",
+   "status": "success",
+   "reason": "",
+   "planning_time_s": 12.652527051,
+   "wall_s": 12.721003554,
+   "length_m": 22.365220154557186,
+   "waypoints": 183,
+   "validation": {
+    "valid": true,
+    "required_clearance": 0.37,
+    "gt_min_clearance": 0.43011626335213105,
+    "voxel_min_clearance": 0.43011626335213,
+    "closest_obstacle": "136:rack 0/rack 0",
+    "endpoints_match": true
+   }
+  }
+ ],
+ "trajectory": [
+  {
+   "status": "success",
+   "reason": "",
+   "wall_s": 1.6922589510000066,
+   "duration_s": 50.177189342212706,
+   "generation": {
+    "success": true,
+    "reason": "",
+    "generation_time_s": 0.021631210000002454,
+    "rejected_candidates": 1,
+    "timing_adjustments": 0,
+    "rounds": 2,
+    "fallback_pieces": 0,
+    "lambdas": [
+     0.0,
+     0.5,
+     1.0,
+     1.0,
+     0.0
+    ],
+    "speed_bound": 0.7342985568122221,
+    "accel_bound": 0.4081893115628913,
+    "duration": 50.177189342212706
+   },
+   "validation": {
+    "valid": true,
+    "failures": [],
+    "duration": 50.177189342212706,
+    "min_clearance_lower": 0.42898596471796413,
+    "min_clearance_upper": 0.4299804122231376,
+    "max_speed_lower": 0.7063623383100494,
+    "max_speed_upper": 0.7063627320009097,
+    "max_accel_lower": 0.3875865450254685,
+    "max_accel_upper": 0.38758705860481135,
+    "max_position_jump": 9.057678187205881e-15,
+    "max_velocity_jump": 6.552843937412218e-15,
+    "max_accel_jump": 2.06083980778777e-15,
+    "max_deviation_upper": 0.6271488578991217
+   }
+  }
+ ],
+ "supervisor_report": {
+  "request": {
+   "goal": [
+    9.25,
+    -4.0,
+    3.9
+   ],
+   "planner": "astar"
+  },
+  "t_request": 8.56,
+  "start": [
+   -8.50000000000001,
+   -11.00000000000001,
+   1.022273975436126
+  ],
+  "goal": [
+   9.25,
+   -4.0,
+   3.9
+  ],
+  "planner": "astar",
+  "map_version": 1,
+  "updates": [],
+  "t_plan_call": 8.752,
+  "plan_service_wall_s": 16.893567726,
+  "path_waypoints": 183,
+  "trajectory_result": {
+   "status": "success",
+   "reason": "",
+   "wall_s": 1.6922589510000066,
+   "duration_s": 50.177189342212706
+  },
+  "activations": [
+   {
+    "t": 26.912000000000003,
+    "t_start": 27.348,
+    "t_end": 77.525189342,
+    "mode": "FOLLOWING"
+   }
+  ],
+  "bridge_events": [
+   {
+    "t": 26.928,
+    "source": "bridge",
+    "name": "TRAJECTORY_ACCEPTED",
+    "data": {
+     "traj_id": 0,
+     "t_start": 27.348,
+     "t_end": 77.525189342,
+     "stamp": 27.348
+    }
+   },
+   {
+    "t": 77.536,
+    "source": "bridge",
+    "name": "TRAJECTORY_COMPLETE",
+    "data": {
+     "traj_id": 0,
+     "p": [
+      9.22762445558434,
+      -4.0170042623944555,
+      3.80136520759458
+     ]
+    }
+   }
+  ],
+  "goal_error_m": 0.06908044493217298,
+  "end_mode": "GOAL_REACHED",
+  "end_detail": "goal error 0.069 m",
+  "t_end": 78.464
+ },
+ "realtime_factor_mission": 0.9659064297987352,
+ "wall_total_s": 110.52923202514648,
+ "map_info": {
+  "stamp": 0.016,
+  "resolution": 0.1,
+  "shape": [
+   198,
+   160,
+   56
+  ],
+  "lo": [
+   -9.9,
+   -12.4,
+   0.0
+  ],
+  "hi": [
+   9.9,
+   3.6,
+   5.6
+  ],
+  "n_voxels": 1774080,
+  "n_occupied": 196034,
+  "n_unknown": 0,
+  "n_primitives": 748,
+  "n_collision": 651,
+  "n_envelope": 8,
+  "n_visual_added": 89,
+  "visual_added": [
+   "oil barrel(1)/oil barrel(1)",
+   "oil barrel(1)/oil barrel(1)",
+   "oil barrel(1)/oil barrel(1)",
+   "oil barrel(2)/oil barrel(2)",
+   "oil barrel(2)/oil barrel(2)",
+   "oil barrel(2)/oil barrel(2)",
+   "oil barrel/oil barrel",
+   "oil barrel/oil barrel",
+   "oil barrel/oil barrel",
+   "L joint pipe/L joint pipe",
+   "lever valve/solid",
+   "lever valve/lever valve",
+   "large valve/solid",
+   "straight stairs/straight stairs",
+   "pallet stack staging/wooden pallet0",
+   "pallet stack staging/wooden pallet0",
+   "pallet stack staging/wooden pallet0",
+   "pallet stack staging/wooden pallet0",
+   "pallet stack staging/wooden pallet0",
+   "pallet stack staging/wooden pallet0",
+   "pallet stack staging/wooden pallet0",
+   "pallet stack staging/wooden pallet0",
+   "pallet stack staging/wooden pallet1",
+   "pallet stack staging/wooden pallet1",
+   "pallet stack staging/wooden pallet1",
+   "pallet stack staging/wooden pallet1",
+   "pallet stack staging/wooden pallet1",
+   "pallet stack staging/wooden pallet1",
+   "pallet stack staging/wooden pallet1",
+   "pallet stack staging/wooden pallet1",
+   "pallet stack staging/wooden pallet2",
+   "pallet stack staging/wooden pallet2",
+   "pallet stack staging/wooden pallet2",
+   "pallet stack staging/wooden pallet2",
+   "pallet stack staging/wooden pallet2",
+   "pallet stack staging/wooden pallet2",
+   "pallet stack staging/wooden pallet2",
+   "pallet stack staging/wooden pallet2",
+   "pallet stack staging/wooden pallet3",
+   "pallet stack staging/wooden pallet3",
+   "pallet stack staging/wooden pallet3",
+   "pallet stack staging/wooden pallet3",
+   "pallet stack staging/wooden pallet3",
+   "pallet stack staging/wooden pallet3",
+   "pallet stack staging/wooden pallet3",
+   "pallet stack staging/wooden pallet3",
+   "pallet stack staging/wooden pallet4",
+   "pallet stack staging/wooden pallet4",
+   "pallet stack staging/wooden pallet4",
+   "pallet stack staging/wooden pallet4",
+   "pallet stack staging/wooden pallet4",
+   "pallet stack staging/wooden pallet4",
+   "pallet stack staging/wooden pallet4",
+   "pallet stack staging/wooden pallet4",
+   "pallet stack staging/wooden pallet5",
+   "pallet stack staging/wooden pallet5",
+   "pallet stack staging/wooden pallet5",
+   "pallet stack staging/wooden pallet5",
+   "pallet stack staging/wooden pallet5",
+   "pallet stack staging/wooden pallet5",
+   "pallet stack staging/wooden pallet5",
+   "pallet stack staging/wooden pallet5",
+   "pallet stack staging/wooden pallet6",
+   "pallet stack staging/wooden pallet6",
+   "pallet stack staging/wooden pallet6",
+   "pallet stack staging/wooden pallet6",
+   "pallet stack staging/wooden pallet6",
+   "pallet stack staging/wooden pallet6",
+   "pallet stack staging/wooden pallet6",
+   "pallet stack staging/wooden pallet6",
+   "pallet stack staging/wooden pallet7",
+   "pallet stack staging/wooden pallet7",
+   "pallet stack staging/wooden pallet7",
+   "pallet stack staging/wooden pallet7",
+   "pallet stack staging/wooden pallet7",
+   "pallet stack staging/wooden pallet7",
+   "pallet stack staging/wooden pallet7",
+   "pallet stack staging/wooden pallet7",
+   "pallet stack staging/wooden pallet8",
+   "pallet stack staging/wooden pallet8",
+   "pallet stack staging/wooden pallet8",
+   "pallet stack staging/wooden pallet8",
+   "pallet stack staging/wooden pallet8",
+   "pallet stack staging/wooden pallet8",
+   "pallet stack staging/wooden pallet8",
+   "pallet stack staging/wooden pallet8",
+   "oil barrel east/oil barrel east",
+   "oil barrel east/oil barrel east",
+   "oil barrel east/oil barrel east"
+  ],
+  "n_updates": 0,
+  "build_s": 0.12424496100000226,
+  "unsupported_bounding_geometry": [],
+  "visual_unbounded": [
+   "forklift/forklift: CadShape"
+  ]
+ },
+ "events": [
+  {
+   "t": 0.016,
+   "source": "scene",
+   "name": "WORLD_EXTRACTED",
+   "data": {
+    "n_records": 667,
+    "unsupported": 0
+   }
+  },
+  {
+   "t": 0.016,
+   "source": "autopath_map",
+   "name": "MAP_PUBLISHED",
+   "data": {
+    "n_occupied": 196034,
+    "n_primitives": 748,
+    "n_visual_added": 89,
+    "n_updates": 0,
+    "build_s": 0.12424496100000226
+   }
+  },
+  {
+   "t": 0.49600000000000005,
+   "source": "autopath_supervisor",
+   "name": "SUPERVISOR_MODE",
+   "data": {
+    "mode": "READY",
+    "detail": ""
+   }
+  },
+  {
+   "t": 0.528,
+   "source": "bridge",
+   "name": "TAKEOFF_START",
+   "data": {
+    "target": [
+     -8.5,
+     -11.0,
+     1.0
+    ]
+   }
+  },
+  {
+   "t": 7.5680000000000005,
+   "source": "bridge",
+   "name": "TAKEOFF_COMPLETE",
+   "data": {
+    "p": [
+     -8.499999999999986,
+     -10.999999999999982,
+     0.9961476431917704
+    ]
+   }
+  },
+  {
+   "t": 8.592,
+   "source": "autopath_supervisor",
+   "name": "SUPERVISOR_MODE",
+   "data": {
+    "mode": "PLANNING",
+    "detail": "astar"
+   }
+  },
+  {
+   "t": 9.664000000000001,
+   "source": "autopath_planner",
+   "name": "CHECKER_BUILT",
+   "data": {
+    "map_version": 1,
+    "build_s": 0.9515984649999965
+   }
+  },
+  {
+   "t": 9.92,
+   "source": "autopath_supervisor",
+   "name": "SUPERVISOR_READY",
+   "data": {
+    "map_version": 1,
+    "build_s": 1.3663875650000037
+   }
+  },
+  {
+   "t": 24.496000000000002,
+   "source": "autopath_planner",
+   "name": "PLAN_RESULT",
+   "data": {
+    "request": 1,
+    "planner": "astar",
+    "status": "success",
+    "reason": "",
+    "planning_time_s": 12.652527051,
+    "length_m": 22.365220154557186
+   }
+  },
+  {
+   "t": 24.544,
+   "source": "autopath_supervisor",
+   "name": "SUPERVISOR_MODE",
+   "data": {
+    "mode": "WAIT_TRAJECTORY",
+    "detail": ""
+   }
+  },
+  {
+   "t": 26.880000000000003,
+   "source": "autopath_trajectory",
+   "name": "TRAJECTORY_RESULT",
+   "data": {
+    "request": 1,
+    "status": "success",
+    "reason": "",
+    "duration_s": 50.177189342212706,
+    "generation_time_s": 0.021631210000002454
+   }
+  },
+  {
+   "t": 26.912000000000003,
+   "source": "autopath_supervisor",
+   "name": "SUPERVISOR_MODE",
+   "data": {
+    "mode": "FOLLOWING",
+    "detail": ""
+   }
+  },
+  {
+   "t": 26.928,
+   "source": "bridge",
+   "name": "TRAJECTORY_ACCEPTED",
+   "data": {
+    "traj_id": 0,
+    "t_start": 27.348,
+    "t_end": 77.525189342,
+    "stamp": 27.348
+   }
+  },
+  {
+   "t": 77.536,
+   "source": "bridge",
+   "name": "TRAJECTORY_COMPLETE",
+   "data": {
+    "traj_id": 0,
+    "p": [
+     9.22762445558434,
+     -4.0170042623944555,
+     3.80136520759458
+    ]
+   }
+  },
+  {
+   "t": 78.464,
+   "source": "autopath_supervisor",
+   "name": "SUPERVISOR_MODE",
+   "data": {
+    "mode": "GOAL_REACHED",
+    "detail": "goal error 0.069 m"
+   }
+  }
+ ]
+}

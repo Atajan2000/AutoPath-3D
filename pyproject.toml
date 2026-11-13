@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "autopath3d"
+version = "0.1.0"
+description = "Collision-aware 3D motion planning (A*, RRT*) for a simulated quadrotor"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+# Lower bounds = oldest versions the test suite has passed on (Ubuntu 24.04 / ROS 2 Jazzy system
+# packages: numpy 1.26.4, scipy 1.11.4, pyyaml 6.0.1). Also tested: numpy 2.5.4, scipy 1.18.1
+# (Windows, Python 3.13). The code uses no NumPy-2-only API, so no upper bound is set.
+dependencies = ["numpy>=1.26", "scipy>=1.11", "pyyaml>=6.0"]
+
+[project.optional-dependencies]
+# rerun-sdk is pinned: the viewer and its .rrd blueprint are written against the 0.41 API, and
+# Rerun changes its Python API and recording format between minor versions.
+viz = ["rerun-sdk==0.41.0"]
+dev = ["pytest>=7.4", "matplotlib", "rerun-sdk==0.41.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["slow: runs planners on full benchmark scenes"]
