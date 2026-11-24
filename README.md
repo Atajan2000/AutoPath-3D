@@ -6,9 +6,15 @@ a simulated Crazyflie in Webots. The warehouse trials include navigation, brakin
 replanning around a forklift, holding when no route exists, and an unsafe stop that ends in
 contact. All flight results are from physics simulation.
 
+## Demonstration
+
+[Watch the AutoPath-3D demonstration on YouTube](https://youtu.be/GumaBVDsYNs). Click the preview below to open the video.
+
 <p align="center">
-  <img src="results/phase4/webots/screenshot_B_replan.jpg" width="820"
-       alt="Webots warehouse: Crazyflie above the cross aisle; the forklift blocks the original path and the replanned path detours around it">
+  <a href="https://youtu.be/GumaBVDsYNs">
+    <img src="results/phase4/webots/screenshot_B_replan.jpg" width="820"
+         alt="Webots warehouse: Crazyflie above the cross aisle; the forklift blocks the original path and the replanned path detours around it">
+  </a>
 </p>
 <p align="center"><sub>Genuine frame rendered by the Webots R2025a simulator, exported by the AutoPath scene
 manager at the end of a Demo B run. The forklift has moved into the cross aisle, blocking the
@@ -17,7 +23,7 @@ the end state of <em>that</em> run (goal error 0.009 m). It is not the archived 
 under <a href="#evaluation">Evaluation</a> (0.057 m). Webots models and textures © Cyberbotics Ltd.,
 under the Webots asset terms (<a href="THIRD_PARTY_NOTICES.md">third-party notices</a>).</sub></p>
 
-**Contents:** [Overview](#overview) · [Architecture](#architecture) · [Features](#technical-features) ·
+**Contents:** [Demonstration](#demonstration) · [Overview](#overview) · [Architecture](#architecture) · [Features](#technical-features) ·
 [Evaluation](#evaluation) · [Reproducing](#reproducing-the-results) · [Limitations](#limitations) ·
 [Licensing](#licensing-and-attribution)
 
